@@ -24,9 +24,8 @@ html, body {
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Заставляет контейнер быть минимум на всю высоту страницы */
+  min-height: 100vh;
 }
-
 
 header {
   background-color: #007bff;
@@ -61,100 +60,44 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Скрывающаяся навигационная панель */
-.nav-container {
+/* Навигационная панель */
+.nav-panel {
   position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  top: 100px; /* Отступ от верхней части страницы */
+  left: 20px; /* Отступ от левого края */
+  width: 200px; /* Ширина панели навигации */
+  background-color: #fff; /* Цвет фона */
+  border-radius: 8px; /* Скругление углов */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+  z-index: 10; /* Уровень над другими элементами */
+  padding: 20px 0; /* Добавлено немного внутреннего отступа */
 }
 
-.nav-btn {
-  width: 60px;
-  height: 60px;
-  background-color: #007bff;
-  border-radius: 50%;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.nav-btn:hover {
-  background-color: #007bff;
-}
-
-.nav-circle {
-  position: absolute;
-  top: 50%;
-  left: 80px; /* Увеличили отступ от основной кнопки */
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  pointer-events: none; /* Отключаем взаимодействие, пока не наведут на кнопку */
-}
-
-.nav-btn:hover + .nav-circle, .nav-circle:hover {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto; /* Включаем взаимодействие, когда она отображается */
-}
-
-/* Анимация для кнопок */
-.nav-circle ul {
-  padding: 0;
-  margin: 0;
+.nav-list {
   list-style: none;
+  padding: 20px 0; /* Отступ внутри панели */
 }
 
-.nav-circle ul li {
-  margin-bottom: 15px;
-  transform: translateX(-50px);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.nav-list li {
+  margin: 10px 0; /* Отступ между элементами списка */
 }
 
-.nav-circle:hover ul li {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.nav-circle ul li a {
+.nav-list a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #333; /* Цвет текста */
   display: flex;
-  align-items: center;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  align-items: center; /* Выравнивание по центру */
+  padding: 10px 15px; /* Отступ вокруг текста */
+  border-radius: 4px; /* Скругление углов */
+  transition: background-color 0.3s; /* Плавный переход цвета фона */
 }
 
-.nav-circle ul li a:hover {
-  background-color: #ddd;
+.nav-list a:hover {
+  background-color: #87c1ff; /* Цвет фона при наведении */
 }
 
-.nav-circle ul li a i {
-  margin-right: 10px;
-  font-size: 1.2em;
-  color: #007bff;
-}
-
-.nav-circle ul li a span {
-  font-size: 14px;
+.nav-list a i {
+  margin-right: 10px; /* Отступ между иконкой и текстом */
 }
 
 /* Фикс футера */
@@ -173,6 +116,7 @@ footer {
 main {
   flex-grow: 1; /* чтобы футер оставался внизу */
   padding: 40px 0;
+  margin-left: 240px; /* Добавлено отступ для панели навигации */
 }
 
 .container {
@@ -181,6 +125,7 @@ main {
   margin: 0 auto;
 }
 
+/* Стили для новостей */
 .news h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -230,7 +175,7 @@ main {
   transform: translateY(-5px);
 }
 
-
+/* Основные стили футера */
 footer {
   background-color: #333;
   color: white;
@@ -243,21 +188,3 @@ footer p {
   margin: 0;
   font-size: 0.9rem;
 }
-
-.nav-container {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.nav-btn {
-  background-color: #007bff;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  color: white;
-  text-align: center;
-}
-
-
