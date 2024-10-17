@@ -1,0 +1,167 @@
+/* Header.css */
+.header-container {
+  background: linear-gradient(135deg, #007bff, #ecd3d3); /* Stylish gradient */
+  color: white;
+  padding: 15px 30px; /* Spacing for better feel */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Soft shadow for depth */
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  height: 50px; /* Logo size */
+  margin-right: 30px; /* Space for logo */
+}
+
+nav {
+  flex-grow: 1; /* Nav takes available space */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 20px; /* Spacing between menu items */
+}
+
+nav a {
+  color: white; /* White text for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Bold text */
+  position: relative; /* For underline effect */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a::after {
+  content: ""; /* Underline effect */
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffcc00; /* Bright underline */
+  transition: width 0.3s; /* Animation for underline */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Positioning the underline */
+}
+
+nav a:hover {
+  color: #ffcc00; /* Highlight color */
+}
+
+nav a:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+.right-corner {
+  display: flex;
+  align-items: center;
+}
+
+.weather-currency {
+  display: flex;
+  align-items: center;
+  margin-right: 30px; /* Space between currency and search */
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  margin-right: 15px; /* Space for weather info */
+}
+
+.weather-icon {
+  color: #ffcc00; /* Icon color */
+  margin-right: 5px; /* Space */
+}
+
+.currency {
+  display: flex; /* Flex for currency items */
+}
+
+.currency-item {
+  margin-left: 15px; /* Space between currency items */
+}
+
+.currency-icon {
+  color: #ffcc00; /* Currency icon color */
+  margin-right: 5px; /* Space */
+}
+
+.search-container {
+  position: relative; /* For positioning the search form */
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px; /* Icon size */
+  transition: transform 0.3s; /* Animation */
+}
+
+.search-icon:hover {
+  transform: scale(1.2); /* Slightly larger on hover */
+}
+
+.search-form {
+  position: absolute;
+  top: 40px; /* Positioning below the icon */
+  right: 0;
+  background: white; /* Background for search form */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  z-index: 1000; /* Overlapping elements */
+}
+
+
+.search-input {
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 3px; /* Rounded corners */
+  padding: 5px;
+  margin-right: 5px; /* Space */
+  width: 200px; /* Input width */
+}
+
+.search-button {
+  background-color: #50e3c2; /* Button color */
+  color: white; /* White text */
+  border: none;
+  border-radius: 3px; /* Rounded corners */
+  padding: 5px 10px; /* Padding */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Animation */
+}
+
+.search-button:hover {
+  background-color: #4bbf8d; /* Darker on hover */
+}
+
+.login-button {
+  background-color: #4a90e2; /* Button color */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Animation */
+}
+
+.login-button:hover {
+  background-color: #3c7a9a; /* Darker on hover */
+}
