@@ -40,14 +40,16 @@ header .container {
 }
 
 header .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2rem; /* Вместо общего .logo */
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  position: relative;
 }
 
 nav a {
@@ -71,6 +73,30 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
   z-index: 10; /* Уровень над другими элементами */
   padding: 20px 0; /* Добавлено немного внутреннего отступа */
+}
+
+.nav-extra {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.nav-extra a {
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.nav-extra a:hover {
+  background-color: #f1f1f1;
 }
 
 .nav-list {
@@ -114,15 +140,19 @@ footer {
 
 /* Основная часть */
 main {
-  flex-grow: 1; /* чтобы футер оставался внизу */
+  flex-grow: 1;
   padding: 40px 0;
-  margin-left: 240px; /* Добавлено отступ для панели навигации */
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
 
 /* Стили для новостей */
@@ -132,33 +162,34 @@ main {
 }
 
 .news-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex; /* Используем flexbox для горизонтального расположения */
+  flex-wrap: wrap; /* Позволяет переносить карточки на следующую строку при недостатке места */
+  gap: 20px; /* Отступы между карточками */
 }
 
 .news-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  flex: 1 1 calc(33.33% - 20px); /* Карточки занимают по 1/3 ширины, с отступом */
+  background-color: #ffffff; /* Цвет фона карточки */
+  border: 1px solid #ddd; /* Граница карточки */
+  border-radius: 5px; /* Закругление углов */
+  padding: 15px; /* Отступы внутри карточки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+  transition: box-shadow 0.3s; /* Плавный переход для тени */
+  transform: translateY(-5px);
 }
 
 .news-card img {
   width: 100%;
-  height: 200px;
+  height: 350px;
   object-fit: cover;
 }
 
 .news-card h3 {
-  font-size: 1.2rem;
-  margin: 10px;
+  margin: 0 0 10px; /* Отступы заголовка */
 }
 
 .news-card p {
-  font-size: 1rem;
-  padding: 0 10px 10px;
+  margin: 0; /* Убираем отступы для параграфа */
 }
 
 .news-card a {
@@ -167,8 +198,8 @@ main {
   font-weight: 500;
 }
 
-.news-card a:hover {
-  color: #0056b3;
+.news-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
 }
 
 .news-card:hover {
@@ -188,3 +219,230 @@ footer p {
   margin: 0;
   font-size: 0.9rem;
 }
+
+.cinema {
+  padding: 40px 0;
+}
+
+.cinema h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cinema-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cinema-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.cinema-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cinema-card h3 {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.cinema-card p {
+  font-size: 1rem;
+  padding: 0 10px 10px;
+}
+
+.cinema-card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.cinema-card a:hover {
+  color: #0056b3;
+}
+
+.cinema-card:hover {
+  transform: translateY(-5px);
+}
+
+.news {
+  padding: 100px 0;
+}
+
+.news h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.news-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-news,
+.cinema-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  margin-right: 20px; /* Отступ между карточками */
+  flex: 1; /* Занимает равное пространство */
+  max-width: 45%; /* Максимальная ширина для каждой карточки */
+}
+
+.main-news img,
+.cinema-card img {
+  width: 100%;
+  height: auto; /* Подстраиваем высоту под изображение */
+  object-fit: cover;
+}
+
+.main-news h3,
+.cinema-card h3 {
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.main-news p,
+.cinema-card p {
+  font-size: 1rem;
+  padding: 0 10px 10px;
+}
+
+.main-news a,
+.cinema-card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.main-news a:hover,
+.cinema-card a:hover {
+  background-color: #ddd;
+}
+
+/* Стили для баз отдыха */
+.base-catalog {
+  padding: 40px 0;
+  
+}
+
+.base-catalog h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.base-list {
+  display: flex; /* Используем flexbox для горизонтального расположения */
+  flex-wrap: wrap; /* Позволяет переносить карточки на следующую строку при недостатке места */
+  gap: 20px; /* Отступы между карточками */
+}
+
+.base-card {
+  flex: 1 1 calc(33.33% - 20px); /* Карточки занимают по 1/3 ширины, с отступом */
+  background-color: #ffffff; /* Цвет фона карточки */
+  border: 1px solid #ddd; /* Граница карточки */
+  border-radius: 5px; /* Закругление углов */
+  padding: 15px; /* Отступы внутри карточки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+  transition: box-shadow 0.3s; /* Плавный переход для тени */
+  transform: translateY(-5px);
+}
+
+.base-card h3 {
+  margin: 0 0 10px; /* Отступы заголовка */
+}
+
+.base-card p {
+  margin: 0; /* Убираем отступы для параграфа */
+}
+
+.base-card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  display: inline-block; /* Сделаем ссылку блочным элементом */
+  margin-top: 10px; /* Отступ сверху */
+}
+
+.base-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+}
+
+.base-card:hover {
+  transform: translateY(-5px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .weather-currency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .weather-text, .currency-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  
+  .search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 1rem;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
