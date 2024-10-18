@@ -1,5 +1,7 @@
 .cinema-schedule {
-    padding: 20px;
+    padding: 100px;
+    margin: 10px;
+    text-align: center; /* Центрирование текста внутри контейнера */
 }
 
 .schedule-title {
@@ -16,6 +18,17 @@
 .movie-swiper {
     display: flex;
     justify-content: center; /* Центрируем слайды */
+    align-items: center; /* Центрируем вертикально */
+    padding: 0 20px; /* Добавьте отступы по бокам, чтобы стрелки были более симметричными */
+}
+
+.swiper-container {
+    display: flex;
+    justify-content: center; /* Центрируем контейнер Swiper */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: none !important;
 }
 
 .movie-card {
@@ -26,7 +39,7 @@
     text-align: center;
     transition: transform 0.3s; /* Плавный эффект при наведении */
     width: 200px; /* Уменьшаем ширину карточки */
-    margin: 0 auto; /* Центрируем карточки внутри слайда */
+    margin: 0 10px; /* Уменьшаем отступ между карточками */
 }
 
 .movie-card:hover {
@@ -54,3 +67,22 @@
     font-size: 14px; /* Уменьшаем размер шрифта для времени сеанса */
 }
 
+.filter-buttons {
+    margin: 20px 0;
+    display: flex; /* Устанавливаем флекс-контейнер для кнопок */
+    justify-content: center; /* Центрируем кнопки */
+}
+
+.filter-buttons button {
+    margin: 0 10px; /* Отступы между кнопками */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.filter-buttons button:hover {
+    background-color: #FFA500;
+}

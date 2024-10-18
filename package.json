@@ -17,6 +17,7 @@
     "react-parallax": "^3.5.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
+    "react-spring": "^9.7.4",
     "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.14",
