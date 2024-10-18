@@ -77,7 +77,7 @@ const Header = () => {
           <img src={logo} alt="Logo" className="logo" />
           <nav className="nav-menu">
             <ul>
-              <li><a href="и">Новости</a></li>
+              <li><a href="#">Новости</a></li>
               <li><a href="#">Услуги</a></li>
               <li><a href="#">Авиша</a></li>
               <li><a href="#">Авто на Дроме</a></li>

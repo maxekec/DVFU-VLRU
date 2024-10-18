@@ -21,10 +21,22 @@
 
 .news-image {
   width: 100%;
-  height: 150px; /* Уменьшена высота изображения */
+  height: 450px; /* Уменьшена высота изображения */
   object-fit: cover;
   border-radius: 10px;
   display: block;
+}
+
+
+
+/* Для WebKit-браузеров (Chrome, Safari) */
+.slider-container::-webkit-scrollbar {
+  display: none; /* Скрывает полосу прокрутки */
+}
+
+/* Для Firefox */
+.slider-container {
+  scrollbar-width: none; /* Скрывает полосу прокрутки */
 }
 
 .news-item-content-overlay {
