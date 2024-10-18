@@ -7,10 +7,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: url('./components/assets/ParallaxDVFU.jpg') no-repeat center center fixed; /* Добавляем фоновое изображение с параллаксом */
+  background: url('./components/assets/TESTING.jpg') no-repeat center center fixed; /* Добавляем фоновое изображение с параллаксом */
   background-size: cover;
   color: #333;
-  line-height: 1.6;
+  line-height: 2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

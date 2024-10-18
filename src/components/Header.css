@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   color: #333; /* Черный текст */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Легкая тень */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Легкая тень */
   position: relative;
   z-index: 1;
   font-family: 'Poppins', sans-serif; /* Новый шрифт */
@@ -59,7 +59,7 @@
   background-color: #FFF;
   padding: 10px 15px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 2%;
   left: 55%;
@@ -171,4 +171,51 @@
 
 .nav-menu a:hover::after {
   width: 100%; /* Подчеркивание заполняет весь элемент при наведении */
+}
+
+
+/* Контейнер для выпадающего меню */
+.dropdown-menu {
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  top: 60px; /* Регулируйте это значение в зависимости от позиции меню */
+  left: 0;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+/* Стили для элементов меню */
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  color: #FFA500;
+}
+
+/* Анимация появления меню */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

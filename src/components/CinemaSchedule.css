@@ -1,0 +1,56 @@
+.cinema-schedule {
+    padding: 20px;
+}
+
+.schedule-title {
+    text-align: center;
+    margin: 2% auto; /* Центрируем элемент с помощью auto */
+    margin-bottom: 25px;
+    font-size: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 600px; /* Устанавливаем максимальную ширину заголовка */
+    padding: 10px; /* Добавляем внутренние отступы для лучшего вида */
+}
+
+.movie-swiper {
+    display: flex;
+    justify-content: center; /* Центрируем слайды */
+}
+
+.movie-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s; /* Плавный эффект при наведении */
+    width: 200px; /* Уменьшаем ширину карточки */
+    margin: 0 auto; /* Центрируем карточки внутри слайда */
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.movie-poster {
+    width: 100%; /* Занимает всю ширину карточки */
+    height: 250px; /* Задаем фиксированную высоту для изображения */
+    object-fit: cover; /* Обеспечивает правильное отображение изображения */
+}
+
+.movie-details {
+    padding: 10px;
+}
+
+.movie-details h3 {
+    font-size: 16px; /* Уменьшаем размер шрифта заголовка */
+    margin: 0;
+}
+
+.movie-details p {
+    margin: 5px 0 0;
+    color: #555;
+    font-size: 14px; /* Уменьшаем размер шрифта для времени сеанса */
+}
+

@@ -1,87 +1,85 @@
 import React, { useEffect } from 'react';
 import Slider from 'react-slick';
-import 'aos/dist/aos.css'; // Import AOS for animations
-import AOS from 'aos'; // Import AOS for animations
-import './NewsSection.css'; // Import CSS for NewsSection
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+import 'aos/dist/aos.css'; 
+import AOS from 'aos'; 
+import './NewsSection.css'; 
 
-const NewsSection = () => {
+const CinemaSection = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
 
-    // Sample slides with static content
-    const slides = [
+    const newsItems = [
         {
             id: 1,
-            title: 'News Block 1',
-            description: 'This is a description of news block 1. It contains important information.',
+            title: 'Новость 1',
+            content: 'Краткое содержание новости 1...',
+            image: 'https://via.placeholder.com/200x100',
         },
         {
             id: 2,
-            title: 'News Block 2',
-            description: 'This is a description of news block 2. Stay tuned for updates.',
+            title: 'Новость 2',
+            content: 'Краткое содержание новости 2...',
+            image: 'https://via.placeholder.com/200x100',
         },
         {
             id: 3,
-            title: 'News Block 3',
-            description: 'This is a description of news block 3. Don’t miss out!',
+            title: 'Новость 3',
+            content: 'Краткое содержание новости 3...',
+            image: 'https://via.placeholder.com/200x100',
         },
         {
             id: 4,
-            title: 'News Block 4',
-            description: 'This is a description of news block 4. Exciting news coming soon.',
+            title: 'Новость 4',
+            content: 'Краткое содержание новости 4...',
+            image: 'https://via.placeholder.com/200x100',
         },
         {
             id: 5,
-            title: 'News Block 5',
-            description: 'This is a description of news block 5. Check back for more details.',
+            title: 'Новость 5',
+            content: 'Краткое содержание новости 5...',
+            image: 'https://via.placeholder.com/200x100',
         },
     ];
 
-    const settings = {
+    const sliderSettings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3, // Show 3 slides at a time
+        slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2, // Show 2 slides on medium screens
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1, // Show 1 slide on small screens
-                },
-            },
-        ],
     };
 
     return (
         <div className="news-section">
-            <h2>Latest News</h2>
-            <Slider {...settings}>
-                {slides.map((slide) => (
-                    <div key={slide.id} data-aos="fade-up" className="slide-container">
-                        <div className="shape circle"></div>
-                        <div className="shape triangle"></div>
-                        <div className="design-block">
-                            <h3>{slide.title}</h3>
-                            <p>{slide.description}</p>
+            <div className="slider-container" data-aos="fade-up">
+                <Slider {...sliderSettings}>
+                    {newsItems.slice(0, 3).map(item => (
+                        <div className="news-item" key={item.id}>
+                            <img src={item.image} alt={item.title} className="news-image" />
+                            <div className="news-item-content-overlay">
+                                <h3 className="news-item-title">{item.title}</h3>
+                                <p className="news-item-content">
+                                    <a href="#">{item.content}</a>
+                                </p>
+                            </div>
                         </div>
-                        <div className="preview">
-                            <p>Preview of {slide.title}</p>
-                        </div>
+                    ))}
+                </Slider>
+            </div>
+            <div className="small-news-blocks">
+                {newsItems.map(item => (
+                    <div className="small-news-item" key={item.id} data-aos="zoom-in">
+                        <img src={item.image} alt={item.title} className="small-news-image" />
+                        <h4 className="small-news-item-title">{item.title}</h4>
+                        <p className="small-news-item-content">{item.content}</p>
                     </div>
                 ))}
-            </Slider>
+            </div>
         </div>
     );
 };
 
-export default NewsSection;
+export default CinemaSection;

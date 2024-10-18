@@ -4,9 +4,19 @@ import './ChatWidget.css'; // Подключаем стили для компо�
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false); // Для контроля видимости виджета
+  const [isClosing, setIsClosing] = useState(false); // Для контроля анимации закрытия
 
   const toggleChat = () => {
-    setIsOpen(!isOpen);
+    if (isOpen) {
+      // Если виджет открыт, запускаем анимацию затухания перед закрытием
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsClosing(false); // Сбрасываем состояние после завершения анимации
+      }, 300); // 300 мс — время анимации затухания
+    } else {
+      setIsOpen(true);
+    }
   };
 
   // Обработчик для прокрутки страницы
@@ -34,8 +44,8 @@ const ChatWidget = () => {
         <button className="chat-toggle" onClick={toggleChat}>
           💬
         </button>
-        {isOpen && (
-          <div className="chat-box">
+        {(isOpen || isClosing) && (
+          <div className={`chat-box ${isClosing ? 'fade-out-widget' : ''}`}>
             <div className="chat-header">
               <h3>Связаться с нами</h3>
               <button className="chat-close" onClick={toggleChat}>
