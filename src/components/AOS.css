@@ -1,0 +1,10 @@
+/* AOS.css */
+[data-aos] {
+    opacity: 1;
+    transition-property: opacity, transform;
+  }
+  
+  [data-aos].aos-animate {
+    opacity: 1;
+  }
+  
