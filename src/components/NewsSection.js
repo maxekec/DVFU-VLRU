@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
@@ -15,6 +15,9 @@ const CinemaSection = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
+
+    const [address, setAddress] = useState('');
+    const [waterStatus, setWaterStatus] = useState('кол-во домов без холодной воды');
 
     const newsItems = [
         {
@@ -72,6 +75,14 @@ const CinemaSection = () => {
         }
     };
 
+    const handleWaterStatusChange = () => {
+        setWaterStatus(prev => 
+            prev === 'кол-во домов без холодной воды' 
+            ? 'кол-во домов без горячей воды' 
+            : 'кол-во домов без холодной воды'
+        );
+    };
+
     return (
         <div className="news-section">
             <div className="slider-container" data-aos="fade-up">
@@ -92,7 +103,7 @@ const CinemaSection = () => {
             <div 
                 className="small-news-blocks" 
                 ref={newsRef} 
-                onWheel={handleWheelScroll} // Добавляем обработчик прокрутки мышью
+                onWheel={handleWheelScroll}
             >
                 {newsItems.map(item => (
                     <div className="small-news-item" key={item.id} data-aos="zoom-in">
@@ -102,8 +113,28 @@ const CinemaSection = () => {
                     </div>
                 ))}
             </div>
+    
+            {/* Новые блоки справа */}
+            <div className="info-blocks" data-aos="fade-up">
+                <div className="vacancies-block">
+                    <h3>Вакансии</h3>
+                    <p>Зарплата: от 30,000₽ до 50,000₽</p>
+                    <button className="view-all-button">Все вакансии</button>
+                </div>
+                <div className="winter-tires-block">
+                    <h3>Зимние шины</h3>
+                    <p>Цена: от 5,000₽</p>
+                    <button className="view-all-button">Смотреть все предложения шин</button>
+                </div>
+                <div className="water-status-block">
+                    <h3>1005 домов без воды</h3>
+                    <input type="text" placeholder="Введите адрес" />
+                    <button className="check-address-button">Проверить адрес</button>
+                </div>
+            </div>
         </div>
     );
+    
 };
 
 export default CinemaSection;

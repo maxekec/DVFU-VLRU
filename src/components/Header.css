@@ -7,8 +7,11 @@
   align-items: center;
   color: #333; /* Черный текст */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Легкая тень */
-  position: relative;
-  z-index: 1;
+  position: sticky; /* Фиксированное позиционирование */
+  top: 0; /* Привязка к верхней части страницы */
+  left: 0; /* Привязка к левой части страницы */
+  width: 100%; /* Занимает всю ширину */
+  z-index: 1000; /* Убедитесь, что хедер находится выше других элементов */
   font-family: 'Poppins', sans-serif; /* Новый шрифт */
 }
 
@@ -30,28 +33,50 @@
   display: flex;
   gap: 30px;
   list-style: none;
-}
+} 
 
 .nav-menu a {
   font-weight: 700; /* Жирный шрифт */
   color: #333; /* Черный текст */
   transition: color 0.3s;
+  position: relative; /* Для псевдоэлемента ::after */
+  padding-bottom: 5px; /* Отступ внизу для подчеркивания */
 }
 
 .nav-menu a:hover {
   color: #FFA500; /* Цвет при наведении */
 }
 
+.nav-menu a.active {
+  color: #FFA500; /* Цвет для активного состояния */
+}
+
+.nav-menu a::after {
+  content: ''; /* Псевдоэлемент для подчеркивания */
+  position: absolute;
+  width: 0%; /* Изначально подчеркивание скрыто */
+  height: 2px;
+  background-color: #FFA500; /* Цвет подчеркивания */
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease; /* Плавное появление подчеркивания */
+}
+
+.nav-menu a:hover::after {
+  width: 100%; /* Подчеркивание заполняет весь элемент при наведении */
+}
+
 /* Правый блок (поиск + информация) */
 .right-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 /* Блок с погодой и валютами */
 .info-box {
   display: flex;
+  position: absolute;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -61,10 +86,10 @@
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: 2%;
-  left: 55%;
+  top: 0.5%;
+  left: 5%;
   color: #333;
-  z-index: 10;
+  z-index: 1;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -81,7 +106,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: width 0.5s ease;
-  z-index: 2;
+  z-index: 1;
 }
 
 .search-overlay.active {
@@ -112,6 +137,7 @@
 
 .search-icon {
   background: none;
+  margin-left: 450px;
   border: none;
   color: #333; /* Черный цвет иконки */
   font-size: 1rem;
@@ -129,6 +155,19 @@
   margin-bottom: 8px;
 }
 
+.info-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather-info, .currency-info {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+}
+
 .weather-info span {
   margin-left: 5px;
   font-weight: bold;
@@ -138,41 +177,6 @@
   display: flex;
   gap: 10px;
 }
-
-/* Меню навигации */
-.nav-menu ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-}
-
-.nav-menu a {
-  font-weight: 700;
-  color: #333; /* Черный текст */
-  position: relative; /* Для псевдоэлемента ::after */
-  padding-bottom: 5px; /* Отступ внизу для подчеркивания */
-  transition: color 0.3s ease; /* Плавная анимация цвета текста */
-}
-
-.nav-menu a::after {
-  content: ''; /* Псевдоэлемент для подчеркивания */
-  position: absolute;
-  width: 0%; /* Изначально подчеркивание скрыто */
-  height: 2px;
-  background-color: #FFA500; /* Цвет подчеркивания */
-  left: 0;
-  bottom: 0;
-  transition: width 0.3s ease; /* Плавное появление подчеркивания */
-}
-
-.nav-menu a:hover {
-  color: #FFA500; /* Цвет текста при наведении */
-}
-
-.nav-menu a:hover::after {
-  width: 100%; /* Подчеркивание заполняет весь элемент при наведении */
-}
-
 
 /* Контейнер для выпадающего меню */
 .dropdown-menu {
@@ -184,10 +188,43 @@
   z-index: 1000;
   top: 60px; /* Регулируйте это значение в зависимости от позиции меню */
   left: 0;
-  width: 200px;
   opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeIn 0.3s forwards;
+  visibility: hidden; /* Скрываем меню по умолчанию */
+  transform: translateY(-10px); /* Начальное смещение для эффекта */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  min-height: 100px; /* Минимальная высота для корректного отображения всех элементов */
+  overflow: hidden; /* Предотвращает выход элементов за границы */
+  
+}
+
+
+.dropdown-menu.visible {
+  opacity: 1; /* Делаем меню видимым */
+  visibility: visible; /* Делаем меню доступным */
+  transform: translateY(0); /* Вернуть в исходное положение */
+}
+
+
+
+/* Индивидуальная ширина для каждого меню */
+.dropdown-news {
+  width: 200px; /* Пример ширины для меню "Новости" */
+}
+
+.dropdown-services {
+  width: 10px; /* Пример ширины для меню "Услуги" */
+}
+
+.dropdown-avisha {
+  width: 180px; /* Пример ширины для меню "Авиша" */
+}
+
+.dropdown-drom {
+  width: 220px; /* Пример ширины для меню "Авто на Дроме" */
+}
+
+.dropdown-farpost {
+  width: 300px; /* Пример ширины для меню "FarPost - объявления" */
 }
 
 /* Стили для элементов меню */
@@ -197,15 +234,12 @@
   margin: 0;
 }
 
-.dropdown-menu li {
-  margin-bottom: 10px;
-}
-
 .dropdown-menu li a {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
+  font-weight: 1500;
   display: block;
+  padding: 10px 0; /* Добавьте отступы, если элементы сливаются */
 }
 
 .dropdown-menu li a:hover {
