@@ -2,6 +2,7 @@
 
 .recreation-centers {
     padding: 20px;
+    backdrop-filter: blur(10px);
 }
 
 .centers-title {

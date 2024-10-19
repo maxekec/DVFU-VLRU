@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
 import logo from './assets/VLRU.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSun, faDollarSign, faEuroSign, faYenSign } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faSun, faDollarSign, faEuroSign, faYenSign, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [dropdownVisible, setDropdownVisible] = useState(null);
   const [weather, setWeather] = useState(null);
   const [currencyRates, setCurrencyRates] = useState({ usd: null, eur: null, cny: null });
   const [currentTime, setCurrentTime] = useState(new Date());
 
-  // Получение данных о погоде и курсах валют
+  const dropdownRef = useRef(null);
+  const menuRef = useRef(null);
+
   useEffect(() => {
     const fetchWeather = async () => {
       try {
@@ -47,94 +50,170 @@ const Header = () => {
     fetchCurrencyRates();
   }, []);
 
-  // Обновление времени каждую секунду
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
-    }, 1000); // Обновляем каждую секунду
+    }, 1000);
 
-    return () => clearInterval(intervalId); // Очищаем интервал при размонтировании
+    return () => clearInterval(intervalId);
   }, []);
 
-  // Форматирование времени для Владивостока
-  const vladivostokTime = currentTime.toLocaleString('ru-RU', {
-    timeZone: 'Asia/Vladivostok',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  });
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setDropdownVisible(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const toggleDropdown = (menu) => {
+    if (dropdownVisible === menu) {
+      setDropdownVisible(null);
+    } else {
+      setDropdownVisible(menu);
+    }
+  };
 
   const handleSearch = (event) => {
     event.preventDefault();
     console.log(`Searching for: ${searchQuery}`);
-    setSearchVisible(false); // Закрытие поиска после отправки
+    setSearchVisible(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header-container');
+      if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <header className="header-container">
         <div className="header-content">
           <img src={logo} alt="Logo" className="logo" />
-          <nav className="nav-menu">
+          <nav className="nav-menu" ref={menuRef}>
             <ul>
-              <li><a href="#">Новости</a></li>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Авиша</a></li>
+              <li>
+                <a 
+                  onClick={() => toggleDropdown('news')} 
+                  href="#" 
+                  className={dropdownVisible === 'news' ? 'active' : ''}
+                >
+                  Новости <FontAwesomeIcon icon={faChevronDown} />
+                </a>
+                <div className={`dropdown-menu ${dropdownVisible === 'news' ? 'visible' : ''}`} ref={dropdownRef}>
+                  <ul>
+                    <li><a href="#">Последние новости</a></li>
+                    <li><a href="#">Популярные статьи</a></li>
+                    <li><a href="#">Политика</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a 
+                  onClick={() => toggleDropdown('services')} 
+                  href="#" 
+                  className={dropdownVisible === 'services' ? 'active' : ''}
+                >
+                  Услуги <FontAwesomeIcon icon={faChevronDown} />
+                </a>
+                <div className={`dropdown-menu ${dropdownVisible === 'services' ? 'visible' : ''}`} ref={dropdownRef}>
+                  <ul>
+                    <li><a href="#">Консультации</a></li>
+                    <li><a href="#">Разработка</a></li>
+                    <li><a href="#">Дизайн</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a 
+                  onClick={() => toggleDropdown('poster')} 
+                  href="#" 
+                  className={dropdownVisible === 'poster' ? 'active' : ''}
+                >
+                  Афиша <FontAwesomeIcon icon={faChevronDown} />
+                </a>
+                <div className={`dropdown-menu ${dropdownVisible === 'poster' ? 'visible' : ''}`} ref={dropdownRef}>
+                  <ul>
+                    <li><a href="#">Концерты</a></li>
+                    <li><a href="#">Театры</a></li>
+                    <li><a href="#">Фестивали</a></li>
+                  </ul>
+                </div>
+              </li>
               <li><a href="#">Авто на Дроме</a></li>
               <li><a href="#">FarPost - объявления</a></li>
             </ul>
           </nav>
         </div>
 
+        {/* Добавляем сюда контейнер с погодой и валютами */}
         <div className="info-container right-section">
-          
+          <div className="weather-info">
+            {weather && (
+              <>
+                <FontAwesomeIcon icon={faSun} />
+                <span>{Math.round(weather.main.temp)}°C</span>
+                <span>{weather.name}</span>
+              </>
+            )}
+          </div>
+          <div className="currency-info">
+            <div>
+              <FontAwesomeIcon icon={faDollarSign} />
+              <span>{currencyRates.usd?.toFixed(2)}</span>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faEuroSign} />
+              <span>{currencyRates.eur?.toFixed(2)}</span>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faYenSign} />
+              <span>{currencyRates.cny?.toFixed(2)}</span>
+            </div>
+          </div>
+
+          {/* Поле поиска */}
           <button
             className="search-icon"
             onClick={() => setSearchVisible(!searchVisible)}
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>
+
+          <div className={`search-overlay ${searchVisible ? 'active' : ''}`}>
+            <form className="search-form" onSubmit={handleSearch}>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Поиск..."
+              />
+              <button type="submit">Найти</button>
+            </form>
+          </div>
         </div>
       </header>
-
-      {/* Блок с информацией (погода и курсы) */}
-      <div className="info-box">
-        {weather && (
-          <div className="weather-info">
-            <FontAwesomeIcon icon={faSun} />
-            <span>{Math.round(weather.main.temp)}°C</span>
-            <span>{weather.name}</span>
-          </div>
-        )}
-        <div className="currency-info">
-          <div>
-            <FontAwesomeIcon icon={faDollarSign} />
-            <span>{currencyRates.usd?.toFixed(2)}</span>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faEuroSign} />
-            <span>{currencyRates.eur?.toFixed(2)}</span>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faYenSign} />
-            <span>{currencyRates.cny?.toFixed(2)}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Оверлей для поиска */}
-      <div className={`search-overlay ${searchVisible ? 'active' : ''}`}>
-        <form className="search-form" onSubmit={handleSearch}>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Введите запрос..."
-            autoFocus
-          />
-          <button type="submit">Найти</button>
-        </form>
-      </div>
     </>
   );
 };

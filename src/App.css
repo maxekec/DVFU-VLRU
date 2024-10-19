@@ -7,25 +7,29 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: url('./components/assets/TESTING.jpg') no-repeat center center fixed; /* Добавляем фоновое изображение с параллаксом */
+  background: url('./components/assets/ParallaxDVFU.jpg') no-repeat center center fixed; /* Добавляем фоновое изображение с параллаксом */
+  backdrop-filter: blur(5%);
   background-size: cover;
   color: #333;
   line-height: 2;
-  min-height: 100vh;
+  min-height: 300vh;
   display: flex;
   flex-direction: column;
 }
+
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  backdrop-filter: blur(10px);
 }
 
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  backdrop-filter: blur(10px);
 }
 
 header {
