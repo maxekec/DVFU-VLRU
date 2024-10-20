@@ -1,11 +1,14 @@
 /* Styles for recreation centers */
 .recreation-centers {
     padding: 50px 20px;
-    background-color: #eec79a9a;
+    background-color: #eec79a9a; /* Основной цвет фона */
     text-align: center;
     font-family: 'Arial', sans-serif;
-    box-shadow: 0 4px 8px rgba(187, 186, 186, 0.815);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Нижняя тень */
+                0 -4px 12px rgba(0, 0, 0, 0.2); /* Верхняя тень */
 }
+
+
 
 .centers-title {
     font-size: 36px;
@@ -14,6 +17,7 @@
     position: relative;
     display: inline-block;
     font-weight: bold;
+    
 }
 
 .centers-title::after {
@@ -81,6 +85,12 @@
 .center-details h3 {
     font-size: 24px;
     margin-bottom: 10px;
+}
+
+h3{
+
+ color: #FFA500;
+
 }
 
 .description {

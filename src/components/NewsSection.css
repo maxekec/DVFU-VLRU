@@ -1,20 +1,74 @@
 .news-section {
   display: flex;
   gap: 20px; /* Промежутки между блоками */
-  background-color: #FFA500;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Легкая тень */
+  background-image: url('../components/assets/abstract-orange-and-white-background-vector.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Это создает эффект параллакса */
   padding: 20px;
+  will-change: transform;
+  position: relative; /* Нужно для псевдоэлемента */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Нижняя тень */
+  0 -4px 12px rgba(0, 0, 0, 0.2); /* Верхняя тень */
+
 }
+
+.news-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../components/assets/abstract-orange-and-white-background-vector.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Параллакс-эффект */
+  filter: blur(15px); /* Применяет размытие */
+  z-index: 0; /* Помещает размытую картинку под текстом */
+}
+
 
 /* Главная новость (слева) */
 .main-news {
   flex: 1; /* Занимает 3/5 пространства */
-  background: #f9f9f9;
+  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Это создает эффект параллакса */
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Добавляем тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-news::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Параллакс-эффект */
+  filter: blur(10px); /* Применяет размытие */
+  z-index: 0; /* Помещает размытую картинку под текстом */
+}
+
+
+
+.main-news:hover {
+  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+
 }
 
 .main-news-content-overlay {
@@ -40,6 +94,11 @@
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.main-news-image:hover {
+  transform: scale(1.05); /* Увеличиваем изображение при наведении */
 }
 
 .main-news-image-container::after {
@@ -79,13 +138,20 @@
   border: 1px solid #e2e2e2;
   border-radius: 10px;
   padding: 10px;
+  margin-top: 5%;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-news-item:hover {
+  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+
 }
 
 .small-news-title {
   font-size: 1em;
-  color: #FFA500;
+  color: #000000;
   
   margin: 5px 0;
 }
@@ -97,15 +163,43 @@
 /* Центральный блок с текстом */
 .center-image-block {
   flex: 2; /* Занимает 2/3 пространства */
-  background: #f9f9f9;
+  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Это создает эффект параллакса */
   border-radius: 10px;
   padding: 20px;
   height: 580px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 20px; /* Отступы для разделения контейнеров */
+  margin: 0 40px; /* Отступы для разделения контейнеров */
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Добавляем тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.center-image-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Параллакс-эффект */
+  filter: blur(10px); /* Применяет размытие */
+  z-index: 0; /* Помещает размытую картинку под текстом */
+}
+
+
+
+.center-image-block:hover {
+  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+
 }
 
 .center-text {
@@ -116,15 +210,42 @@
 /* Вертикальный блок актуальных новостей (справа) */
 .recent-news {
   flex: 1;
-  background: #f9f9f9;
+  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Это создает эффект параллакса */
   border-radius: 10px;
   padding: 15px;
-  max-width: 225px; /* Установим максимальную ширину */
-  height: 580px; /* Автоматическая высота */
+  max-width: 225px;
+  height: 580px;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Промежутки между новостями */
+  gap: 15px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Добавляем тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recent-news::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Параллакс-эффект */
+  filter: blur(10px); /* Применяет размытие */
+  z-index: 0; /* Помещает размытую картинку под текстом */
+}
+
+
+.recent-news:hover {
+  transform: translateY(-5px);
+
 }
 
 /* Общий стиль для контейнеров без воды и вакансий */
@@ -149,16 +270,22 @@
   margin-bottom: 10px;
 }
 
-/* Новый стиль для элементов актуальных новостей */
-.recent-news-item
- {
+/* Актуальные новости */
+.recent-news-item {
   background: #ffffff;
   border: 1px solid #e2e2e2;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.recent-news-item:hover {
+  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+
+}
+
+/* Без воды */
 .no-water-item {
   background: #ffffff;
   border: 1px solid #e2e2e2;
@@ -166,12 +293,18 @@
   padding: 10px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
-  flex: 1; /* Занимает доступное пространство */
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.no-water-item:hover {
+  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Увеличиваем тень */
 }
 .recent-news-title,
 .no-water-title {
   font-size: 1em;
-  color: #FFA500;
+  color: #000000;
 }
 
 .recent-news-content,
@@ -193,18 +326,21 @@ h3 {
 
 /* Центрируем блок с изображением */
 .central-image-container {
-  position: relative; /* Для позиционирования текста */
-  width: 100%; /* Ширина контейнера 100% */
-  transition: opacity 1s ease; /* Плавный переход */
+  position: relative;
+  width: 100%;
+  transition: opacity 1s ease;
 }
 
 .central-image {
-  width: 100%; /* Занимает всю ширину контейнера */
-  height: 500px; /* Вы можете изменить высоту по своему усмотрению */
-  object-fit: cover; /* Обеспечивает правильное отображение изображения */
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+  transition: transform 0.3s ease;
 }
+
+
 
 .central-image-content-overlay {
   position: absolute;

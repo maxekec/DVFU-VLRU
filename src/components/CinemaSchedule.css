@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa; /* Light background for the body */
     color: #333; /* Default text color */
+    
+
 }
 
 .cinema-schedule {
@@ -9,8 +11,13 @@ body {
     text-align: center;
     max-width: 100%;
     background: none;
-    margin-bottom: 50px; /* Add bottom margin here */
+    margin-bottom: 50px; /* Отступ снизу */
+    position: relative; /* Для использования псевдоэлементов */
+    
 }
+
+
+
 
 .schedule-title {
     text-align: center;
@@ -21,6 +28,7 @@ body {
    
     
 }
+
 
 .movie-swiper {
     display: flex;
@@ -95,6 +103,11 @@ body {
     opacity: 0.5;
     transition: opacity 0.3s;
 }
+
+h3{
+color: #000000;
+}
+
 
 /* Styles for ticket button and heart icon */
 .ticket-button {

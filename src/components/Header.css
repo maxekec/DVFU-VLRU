@@ -1,6 +1,6 @@
 /* Контейнер для хедера */
 .header-container {
-  background: #ffffff; /* Белый фон */
+  background: linear-gradient(180deg, #ffffff 93%, #FFA500 100%); /* Основной фон с градиентом */
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -13,6 +13,12 @@
   width: 100%; /* Занимает всю ширину */
   z-index: 1000; /* Убедитесь, что хедер находится выше других элементов */
   font-family: 'Poppins', sans-serif; /* Новый шрифт */
+}
+
+/* Уменьшенная версия шапки при прокрутке */
+.header-container.shrink {
+  padding: 10px 40px; /* Уменьшаем отступы */
+  height: 60px; /* Уменьшаем высоту шапки */
 }
 
 /* Контент хедера */
@@ -33,7 +39,7 @@
   display: flex;
   gap: 30px;
   list-style: none;
-} 
+}
 
 .nav-menu a {
   font-weight: 700; /* Жирный шрифт */
@@ -120,6 +126,7 @@
   align-items: center; /* Выравнивание по вертикали */
   width: 100%; /* Занимает всю ширину контейнера */
 }
+
 .search-form input {
   flex: 1;
   padding: 10px;
@@ -174,7 +181,6 @@
   display: flex;
   gap: 5px;
   align-items: center;
-
 }
 
 .weather-info span {
@@ -203,17 +209,13 @@
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   min-height: 100px; /* Минимальная высота для корректного отображения всех элементов */
   overflow: hidden; /* Предотвращает выход элементов за границы */
-  
 }
-
 
 .dropdown-menu.visible {
   opacity: 1; /* Делаем меню видимым */
   visibility: visible; /* Делаем меню доступным */
   transform: translateY(0); /* Вернуть в исходное положение */
 }
-
-
 
 /* Индивидуальная ширина для каждого меню */
 .dropdown-news {

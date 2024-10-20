@@ -135,14 +135,14 @@ const Header = () => {
                   href="#" 
                   className={dropdownVisible === 'services' ? 'active' : ''}
                 >
-                  Услуги <FontAwesomeIcon icon={faChevronDown} />
+                  Разделы <FontAwesomeIcon icon={faChevronDown} />
                 </a>
                 
                 <div className={`dropdown-menu ${dropdownVisible === 'services' ? 'visible' : ''}`} ref={dropdownRef}>
                   <ul>
-                    <li><a href="#">Консультации</a></li>
-                    <li><a href="#">Разработка</a></li>
-                    <li><a href="#">Дизайн</a></li>
+                    <li><a href="VLRU">Базы отдыха</a></li>
+                    <li><a href="#">Недвижимость</a></li>
+                    <li><a href="#">ТВ-Программа</a></li>
                   </ul>
                 </div>
               </li>

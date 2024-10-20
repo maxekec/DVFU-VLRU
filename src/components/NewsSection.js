@@ -90,8 +90,8 @@ const NewsSection = () => {
         },
         {
             id: 4,
-            title: 'Парикмахер Стрижевский',
-            content: '75 000₽ - 95 000₽',
+            title: 'Парикмахер Нечаевский',
+            content: '5000₽ - 8000₽',
             image: news5,
         },
     ];
@@ -200,7 +200,7 @@ const NewsSection = () => {
     return (
         <div className="news-section">
             {/* Вертикальный блок с главной новостью */}
-            <div className="main-news" data-aos="zoom-in" data-aos-duration="750">
+            <div className="main-news" data-aos="fade-right" data-aos-duration="1500">
                 <div className="main-news-image-container">
                     <img src={newsItems[0].image} alt={newsItems[0].title} className="main-news-image" />
                     <div className="main-news-content-overlay">
@@ -219,7 +219,7 @@ const NewsSection = () => {
             </div>
 
             {/* Центральный блок с изображением и текстом */}
-            <div className="center-image-block" data-aos="zoom-out" data-aos-duration="2000">
+            <div className="center-image-block" data-aos="fade-down" data-aos-duration="2000">
                 <div className={`central-image-container ${fade ? 'fade' : ''}`}>
                     <img src={recentNewsItems[currentIndex].image} alt={recentNewsItems[currentIndex].title} className="central-image" />
                     <div className="central-image-content-overlay">
@@ -230,7 +230,7 @@ const NewsSection = () => {
             </div>
 
             {/* Контейнер для актуальных новостей с дополнительными контейнерами */}
-            <div className="recent-news" data-aos="zoom-in" data-aos-duration="2500">
+            <div className="recent-news" data-aos="fade-left" data-aos-duration="2500">
                 <h3>Актуальное</h3>
                 <div className="recent-news-slider" style={{ height: '300px' }}>
                     <Slider {...sliderSettings}>
