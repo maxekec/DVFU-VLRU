@@ -107,18 +107,26 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: width 0.5s ease;
   z-index: 1;
+  display: flex; /* Добавлено для выравнивания */
+  align-items: center; /* Добавлено для вертикального центрирования */
 }
 
 .search-overlay.active {
-  width: 25%;
+  width: 20%;
 }
 
+.search-form {
+  display: flex; /* Убедитесь, что кнопка и инпут находятся на одной линии */
+  align-items: center; /* Выравнивание по вертикали */
+  width: 100%; /* Занимает всю ширину контейнера */
+}
 .search-form input {
   flex: 1;
   padding: 10px;
   font-size: 1rem;
   border: none;
   outline: none;
+  margin-top: -17px; /* Небольшой отрицательный отступ для приподнимания */
 }
 
 .search-form button {
@@ -129,6 +137,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 1rem;
+  margin-top: -17px; /* Небольшой отрицательный отступ для приподнимания */
 }
 
 .search-form button:hover {
@@ -137,7 +146,7 @@
 
 .search-icon {
   background: none;
-  margin-left: 450px;
+  margin-left: 430px;
   border: none;
   color: #333; /* Черный цвет иконки */
   font-size: 1rem;

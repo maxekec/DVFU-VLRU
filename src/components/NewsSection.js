@@ -1,140 +1,276 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css'; 
-import 'slick-carousel/slick/slick-theme.css';
-import 'aos/dist/aos.css'; 
-import AOS from 'aos'; 
-import './NewsSection.css'; 
-import news1 from './assets/news1.jpg';
+import React, { useState, useEffect } from 'react';
+import Slider from 'react-slick'; // Импортируем Slider
+import './NewsSection.css';
+import news1 from './assets/news1.jpg'; // Импорт изображений
 import news2 from './assets/news2.jpg';
 import news3 from './assets/news3.jpeg';
 import news4 from './assets/news4.jpg';
 import news5 from './assets/news5.jpg';
+import news6 from './assets/news6.jpg';
+import news7 from './assets/news7.jpg';
+import news8 from './assets/news8.jpg';
+import news9 from './assets/news9.jpg';
 
-const CinemaSection = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1000 });
-    }, []);
-
-    const [address, setAddress] = useState('');
-    const [waterStatus, setWaterStatus] = useState('кол-во домов без холодной воды');
-
+const NewsSection = () => {
     const newsItems = [
         {
             id: 1,
-            title: 'Новость 1',
-            content: 'Краткое содержание новости 1...',
+            title: 'Золотой мост',
+            content: 'Серьезное ДТП',
             image: news1,
         },
         {
             id: 2,
-            title: 'Новость 2',
-            content: 'Краткое содержание новости 2...',
+            title: 'Сильные пробки в центре',
+            content: '10 баллов!',
             image: news2,
         },
         {
             id: 3,
-            title: 'Новость 3',
-            content: 'Краткое содержание новости 3...',
+            title: 'Тут плавать нельзя',
+            content: 'Ну если только чуть-чуть',
             image: news3,
         },
         {
             id: 4,
-            title: 'Новость 4',
-            content: 'Краткое содержание новости 4...',
+            title: 'Лето в самом разгаре',
+            content: 'Очень много людей',
             image: news4,
         },
         {
             id: 5,
-            title: 'Новость 5',
-            content: 'Краткое содержание новости 5...',
+            title: 'Крутой дом',
+            content: 'Построили в каком-то там году',
+            image: news5,
+        },
+        {
+            id: 6,
+            title: 'Потрясающий вид',
+            content: 'Вот они, Чебоксары...',
+            image: news6,
+        },
+        {
+            id: 7,
+            title: 'Хороший город',
+            content: 'Ну тут не докопаться',
+            image: news7,
+        },
+        {
+            id: 8,
+            title: 'Прикольная арка',
+            content: 'Проход 1000 рублей',
+            image: news8,
+        },
+        {
+            id: 9,
+            title: 'Великолепие',
+            content: 'Погода отличная',
+            image: news9,
+        },
+    ];
+
+    const vacanciesItems = [
+        {
+            id: 1,
+            title: 'Продавец-кассир Бубля',
+            content: '30 000₽ - 50 000₽',
+            image: news2,
+        },
+        {
+            id: 2,
+            title: 'Фотограф начинающий',
+            content: '25 000₽ - 35 000₽',
+            image: news3,
+        },
+        {
+            id: 3,
+            title: 'Консультант М.Видео',
+            content: '35 000₽ - 55 000₽',
+            image: news4,
+        },
+        {
+            id: 4,
+            title: 'Парикмахер Стрижевский',
+            content: '75 000₽ - 95 000₽',
             image: news5,
         },
     ];
 
+    // Уникальные идентификаторы для первого слайдера актуальных новостей
+    const recentNewsItems = [
+        {
+            id: 101, // Новые идентификаторы для первого слайдера
+            title: 'Обновление сайта',
+            content: 'Сайт обновился до новой версии!',
+            image: news1,
+        },
+        {
+            id: 102,
+            title: 'Погодные условия',
+            content: 'Ожидаются дожди в ближайшие дни.',
+            image: news2,
+        },
+        {
+            id: 103,
+            title: 'Новые правила',
+            content: 'Введены новые правила дорожного движения.',
+            image: news3,
+        },
+        {
+            id: 104,
+            title: 'Спорт',
+            content: 'Наши спортсмены завоевали медали.',
+            image: news4,
+        },
+        {
+            id: 105,
+            title: 'Культура',
+            content: 'Газманов приезжает завтра!',
+            image: news5,
+        },
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0); // Текущий индекс слайда
+    const [fade, setFade] = useState(false); // Состояние для анимации
+
+    // Функция для смены новости
+    const changeNews = () => {
+        setFade(true); // Начинаем анимацию
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % recentNewsItems.length); // Переключаем на следующий индекс
+            setFade(false); // Завершаем анимацию
+        }, 750); // Задержка для анимации
+    };
+
+    // Используем эффект для автоматической смены новости каждые 7 секунд
+    useEffect(() => {
+        const interval = setInterval(changeNews, 7000); // 7000 мс = 7 секунд
+        return () => clearInterval(interval); // Очищаем интервал при размонтировании
+    }, []);
+
+    // Настройки слайдера
     const sliderSettings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 1, // Показываем 1 слайд
         slidesToScroll: 1,
+        vertical: true, // Включаем вертикальный режим
+        verticalSwiping: true,
+        adaptiveHeight: true,
+        arrows: false,
+        autoplay: true, // Автопрокрутка
+        autoplaySpeed: 7000, // Задержка между слайдами
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
     };
 
-    // Реф для блока новостей
-    const newsRef = useRef(null);
-
-    // Обработчик прокрутки мышью
-    const handleWheelScroll = (event) => {
-        event.preventDefault();
-        if (newsRef.current) {
-            // Прокручиваем вертикально в зависимости от направления прокрутки
-            newsRef.current.scrollBy({
-                top: event.deltaY > 0 ? 100 : -100, // Прокручиваем на 100px
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    const handleWaterStatusChange = () => {
-        setWaterStatus(prev => 
-            prev === 'кол-во домов без холодной воды' 
-            ? 'кол-во домов без горячей воды' 
-            : 'кол-во домов без холодной воды'
-        );
-    };
+    // Данные для слайдера домов без горячей и холодной воды
+    const noWaterHouses = [
+        {
+            id: 1,
+            title: 'Дома без горячей воды',
+            content: '50 домов.',
+        },
+        {
+            id: 2,
+            title: 'Дома без холодной воды',
+            content: '30 домов.',
+        },
+    ];
 
     return (
         <div className="news-section">
-            <div className="slider-container" data-aos="fade-up">
-                <Slider {...sliderSettings}>
-                    {newsItems.slice(0, 3).map(item => (
-                        <div className="news-item" key={item.id}>
-                            <img src={item.image} alt={item.title} className="news-image" />
-                            <div className="news-item-content-overlay">
-                                <h3 className="news-item-title">{item.title}</h3>
-                                <p className="news-item-content">
-                                    <a href="#">{item.content}</a>
-                                </p>
-                            </div>
+            {/* Вертикальный блок с главной новостью */}
+            <div className="main-news" data-aos="zoom-in" data-aos-duration="750">
+                <div className="main-news-image-container">
+                    <img src={newsItems[0].image} alt={newsItems[0].title} className="main-news-image" />
+                    <div className="main-news-content-overlay">
+                        <h2 className="main-news-title">{newsItems[0].title}</h2>
+                        <p className="main-news-description">{newsItems[0].content}</p>
+                    </div>
+                </div>
+                <div className="small-news-blocks" data-aos="zoom-in" data-aos-duration="1500">
+                    {newsItems.slice(1, 3).map(item => (
+                        <div className="small-news-item" key={item.id}>
+                            <h4 className="small-news-title">{item.title}</h4>
+                            <p className="small-news-content">{item.content}</p>
                         </div>
                     ))}
-                </Slider>
+                </div>
             </div>
-            <div 
-                className="small-news-blocks" 
-                ref={newsRef} 
-                onWheel={handleWheelScroll}
-            >
-                {newsItems.map(item => (
-                    <div className="small-news-item" key={item.id} data-aos="zoom-in">
-                        <img src={item.image} alt={item.title} className="small-news-image" />
-                        <h4 className="small-news-item-title">{item.title}</h4>
-                        <p className="small-news-item-content">{item.content}</p>
+
+            {/* Центральный блок с изображением и текстом */}
+            <div className="center-image-block" data-aos="zoom-out" data-aos-duration="2000">
+                <div className={`central-image-container ${fade ? 'fade' : ''}`}>
+                    <img src={recentNewsItems[currentIndex].image} alt={recentNewsItems[currentIndex].title} className="central-image" />
+                    <div className="central-image-content-overlay">
+                        <h2 className="central-image-title">{recentNewsItems[currentIndex].title}</h2>
+                        <p className="central-image-description">{recentNewsItems[currentIndex].content}</p>
                     </div>
-                ))}
+                </div>
             </div>
-    
-            {/* Новые блоки справа */}
-            <div className="info-blocks" data-aos="fade-up">
-                <div className="vacancies-block">
-                    <h3>Вакансии</h3>
-                    <p>Зарплата: от 30,000₽ до 50,000₽</p>
-                    <button className="view-all-button">Все вакансии</button>
+
+            {/* Контейнер для актуальных новостей с дополнительными контейнерами */}
+            <div className="recent-news" data-aos="zoom-in" data-aos-duration="2500">
+                <h3>Актуальное</h3>
+                <div className="recent-news-slider" style={{ height: '300px' }}>
+                    <Slider {...sliderSettings}>
+                        {recentNewsItems.map(item => (
+                            <div className="recent-news-item" key={item.id}>
+                                <h4 className="recent-news-title">{item.title}</h4>
+                                <p className="recent-news-content">{item.content}</p>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
-                <div className="winter-tires-block">
-                    <h3>Зимние шины</h3>
-                    <p>Цена: от 5,000₽</p>
-                    <button className="view-all-button">Смотреть все предложения шин</button>
+
+                {/* Дополнительный контейнер для вакансий */}
+                <h3>Вакансии</h3>
+                <div className="vacancies-slider" style={{ height: '300px' }}>
+                    <Slider {...sliderSettings}>
+                        {vacanciesItems.map(item => (
+                            <div className="recent-news-item" key={item.id}>
+                                <h4 className="recent-news-title">{item.title}</h4>
+                                <p className="recent-news-content">{item.content}</p>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
-                <div className="water-status-block">
-                    <h3>1005 домов без воды</h3>
-                    <input type="text" placeholder="Введите адрес" />
-                    <button className="check-address-button">Проверить адрес</button>
+
+                {/* Контейнер для домов без воды с одним слайдером */}
+
+                <div className="no-water-slider" style={{ height: '300px' }}>
+                    <Slider {...sliderSettings}>
+                        {noWaterHouses.map(item => (
+                            <div className="no-water-item" key={item.id}>
+                                <h4 className="no-water-title">{item.title}</h4>
+                                <p className="no-water-content">{item.content}</p>
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </div>
     );
-    
 };
 
-export default CinemaSection;
+export default NewsSection;

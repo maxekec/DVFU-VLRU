@@ -1,156 +1,238 @@
 .news-section {
   display: flex;
-  align-items: flex-start;
+  gap: 20px; /* Промежутки между блоками */
+  background-color: #FFA500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Легкая тень */
   padding: 20px;
 }
 
-.slider-container {
-  flex: 0 0 300px; /* Уменьшена ширина слайдера */
-  max-width: 300px;
-  margin-right: 20px;
-  overflow: hidden;
-}
-
-.news-item {
-  position: relative;
-  margin-bottom: 15px;
-  overflow: hidden;
+/* Главная новость (слева) */
+.main-news {
+  flex: 1; /* Занимает 3/5 пространства */
+  background: #f9f9f9;
   border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Добавляем тень */
 }
 
-.news-image {
+.main-news-content-overlay {
+  position: absolute;
+  display: flex;
+  top: 65%;
+  left: 3%;
+  border-radius: 25px;
+  flex-direction: column;
+  justify-content: flex-end; /* Текст располагается у нижней границы */
+  align-items: flex-start; /* Текст выравнивается по левому краю */
+  color: white;
+  text-align: left; /* Текст выравнивается влево */
+  z-index: 3;
+}
+
+.main-news-image-container {
+  position: relative;
+}
+
+.main-news-image {
   width: 100%;
-  height: 662px; /* Уменьшена высота изображения */
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
-  display: block;
 }
 
-/* Для WebKit-браузеров (Chrome, Safari) */
-.slider-container::-webkit-scrollbar {
-  display: none; /* Скрывает полосу прокрутки */
-}
-
-/* Для Firefox */
-.slider-container {
-  scrollbar-width: none; /* Скрывает полосу прокрутки */
-}
-
-.news-item-content-overlay {
+.main-news-image-container::after {
+  content: '';
   position: absolute;
   bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 8px 15px; /* Уменьшены отступы */
-  box-sizing: border-box;
-  text-align: left;
-  transition: background 0.3s;
+  left: 0;
+  right: 0;
+  height: 50%; /* Высота градиента, можно настроить */
+  background: linear-gradient(to top, rgba(0, 0, 0, 50), rgba(0, 0, 0, 0)); /* Градиент снизу вверх */
+  border-radius: 10px; /* Совпадает с радиусом изображения */
 }
 
-.news-item:hover .news-item-content-overlay {
-  background: rgba(0, 0, 0, 0.8);
+.main-news-content {
+  text-align: center;
 }
 
-.news-item-title {
-  font-size: 1.2em; /* Уменьшен размер шрифта */
-  margin: 0 0 3px;
+.main-news-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+  padding-left: 15px;
 }
 
-.news-item-content a {
-  color: #007bff;
-  text-decoration: underline;
+.main-news-description {
+  font-size: 1em;
 }
 
-.news-item-content a:hover {
-  color: #0056b3;
-}
-
+/* Маленькие новости под главной новостью */
 .small-news-blocks {
   display: flex;
   flex-direction: column;
-  gap: 57.5px; /* Отступы между блоками */
-  flex: 1;
-  margin-top: 20px; /* Отступ сверху */
+  gap: 10px;
 }
 
 .small-news-item {
-  display: flex;
-  max-width: 700px;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
   background: #ffffff;
   border: 1px solid #e2e2e2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.small-news-item:hover {
-  transform: scale(1.02);
-  background-color: #f0f4f8;
-}
-
-.small-news-image {
-  width: 60px; /* Уменьшена ширина изображения */
-  height: 60px; /* Уменьшена высота изображения */
   border-radius: 10px;
-  margin-right: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
 }
 
-.small-news-item-title {
-  font-size: 1em; /* Уменьшен размер заголовка */
-  color: #007bff;
-  margin: 0;
+.small-news-title {
+  font-size: 1em;
+  color: #FFA500;
+  
+  margin: 5px 0;
 }
 
-.small-news-item-content {
-  font-size: 0.9em; /* Уменьшен размер текста */
+.small-news-content {
+  font-size: 0.9em;
 }
 
-/* Стили для новых блоков */
-.vacancies-block,
-.winter-tires-block,
-.water-status-block {
-  border-radius: 15px;
-  padding: 20px; /* Увеличены отступы */
-  gap: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, background-color 0.3s;
-  margin-left: 10px; /* Смещение влево для каждого блока */
+/* Центральный блок с текстом */
+.center-image-block {
+  flex: 2; /* Занимает 2/3 пространства */
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px; /* Отступы для разделения контейнеров */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Добавляем тень */
 }
 
-.info-blocks {
+.center-text {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Вертикальный блок актуальных новостей (справа) */
+.recent-news {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 225px; /* Установим максимальную ширину */
+  height: 580px; /* Автоматическая высота */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  gap: 24px; /* Уменьшены отступы между блоками */
-  flex: 0 0 250px; /* Ширина блока с информацией */
-  margin-left: 40px; /* Увеличен отступ справа от блока новостей */
+  gap: 15px; /* Промежутки между новостями */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7); /* Добавляем тень */
 }
 
-.vacancies-block h3,
-.winter-tires-block h3,
-.water-status-block h3 {
+/* Общий стиль для контейнеров без воды и вакансий */
+.no-water-container,
+.vacancies-container {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  width: 100%; /* Занимаем полную ширину */
+  gap: 15px;
+  margin-top: 25px;
+}
+
+
+
+.vacancies-container h3,
+.no-water-container h3 {
+  text-align: center; /* Выравниваем заголовок по центру */
+  margin-bottom: 10px;
+}
+
+/* Новый стиль для элементов актуальных новостей */
+.recent-news-item
+ {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
-  margin: 10px 0; /* Центрируем элемент с помощью auto */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+.no-water-item {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  flex: 1; /* Занимает доступное пространство */
+}
+.recent-news-title,
+.no-water-title {
+  font-size: 1em;
+  color: #FFA500;
 }
 
-.view-all-button,
-.check-address-button {
-  background-color: #000000;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  display: block; /* Позволяет использовать margin: 0 auto; */
-  margin: 10px auto; /* Центрируем кнопку */
+.recent-news-content,
+.no-water-content {
+  font-size: 0.9em;
 }
 
-.view-all-button:hover,
-.check-address-button:hover {
-  background-color: #FFA500;
+/* Стили слайдера */
+.slick-slide {
+  display: flex !important; /* Позволяем элементам занимать всю высоту */
+  justify-content: center; /* Центрируем содержимое */
+  align-items: center; /* Центрируем содержимое */
+  height: auto; /* Установите высоту по вашему усмотрению */
+}
+
+h3 {
+  text-align: center;
+}
+
+/* Центрируем блок с изображением */
+.central-image-container {
+  position: relative; /* Для позиционирования текста */
+  width: 100%; /* Ширина контейнера 100% */
+  transition: opacity 1s ease; /* Плавный переход */
+}
+
+.central-image {
+  width: 100%; /* Занимает всю ширину контейнера */
+  height: 500px; /* Вы можете изменить высоту по своему усмотрению */
+  object-fit: cover; /* Обеспечивает правильное отображение изображения */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+}
+
+.central-image-content-overlay {
+  position: absolute;
+  bottom: 12px; /* Размещаем текст у нижней границы */
+  border-radius: 10px;
+  left: 0;
+  width: 100%; /* Ширина 100% */
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 50), rgba(0, 0, 0, 0)); /* Градиент снизу вверх */
+  color: white; /* Цвет текста */
+}
+
+.central-image-title {
+  font-size: 1.5em; /* Размер заголовка */
+  margin: 10px 0;
+}
+
+.central-image-description {
+  font-size: 1em; /* Размер описания */
+}
+
+.central-image-container.fade {
+  opacity: 0; /* Скрываем контейнер при анимации */
+}
+
+.slick-slider {
+  display: flex;
+  align-items: center; /* Центрируем элементы по вертикали */
+  justify-content: center; /* Центрируем элементы по горизонтали */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
 }
