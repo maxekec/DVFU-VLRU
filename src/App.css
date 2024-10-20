@@ -6,13 +6,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: url('./components/assets/ParallaxDVFU.jpg') no-repeat center center fixed; /* Добавляем фоновое изображение с параллаксом */
-  backdrop-filter: blur(5%);
+  font-family: 'Roboto', sans-serif;    
   background-size: cover;
-  color: #333;
+  color: #000000;
   line-height: 2;
-  min-height: 300vh;
   display: flex;
   flex-direction: column;
 }
@@ -22,14 +19,41 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  backdrop-filter: blur(10px);
+}
+::-webkit-scrollbar {
+  width: 8px; /* Увеличиваем ширину скроллбара для улучшения видимости */
+  height: 8px; /* Увеличиваем высоту скроллбара */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 165, 0, 0.1); /* Легкий фон трека для контраста */
+  border-radius: 10px; /* Закругление углов трека */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Легкая тень для трека */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff8c00, #fa642e); /* Градиент для основной полосы */
+  border-radius: 10px; /* Закругление углов скроллбара */
+  transition: background 0.3s, transform 0.3s; /* Плавный переход цвета и эффекта при наведении */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff7f50, #ff6347); /* Градиент при наведении */
+  transform: scale(1.1); /* Увеличение при наведении для эффекта */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #ff4500, rgb(255, 102, 0)); /* Цвет при нажатии */
+  transform: scale(0.9); /* Уменьшение при нажатии для эффекта */
 }
 
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(224, 196, 154, 0.651)); 
   backdrop-filter: blur(10px);
+  
 }
 
 header {
@@ -451,3 +475,4 @@ footer p {
   .search-button:hover {
     background-color: #0056b3;
   }
+ 

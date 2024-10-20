@@ -137,6 +137,7 @@ const Header = () => {
                 >
                   Услуги <FontAwesomeIcon icon={faChevronDown} />
                 </a>
+                
                 <div className={`dropdown-menu ${dropdownVisible === 'services' ? 'visible' : ''}`} ref={dropdownRef}>
                   <ul>
                     <li><a href="#">Консультации</a></li>
@@ -153,6 +154,7 @@ const Header = () => {
                 >
                   Афиша <FontAwesomeIcon icon={faChevronDown} />
                 </a>
+                
                 <div className={`dropdown-menu ${dropdownVisible === 'poster' ? 'visible' : ''}`} ref={dropdownRef}>
                   <ul>
                     <li><a href="#">Концерты</a></li>

@@ -1,0 +1,159 @@
+.lovi-kupon-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    color: #333;
+    background-color: #fff;
+    /* Белый фон */
+    display: inline-block;
+    /* Для центрирования фона */
+    padding: 10px 20px;
+    /* Отступы для блока с названием */
+    border-radius: 12px;
+    /* Радиус для сглаживания углов */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Легкая тень */
+    margin-bottom: 30px;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Центрирование контента */
+    font-size: 1.2rem;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100px;
+    cursor: pointer;
+    /* Фиксированная ширина */
+    height: 100px;
+    /* Фиксированная высота */
+}
+
+.icon-label {
+    margin-top: 10px;
+    color: rgb(0, 0, 0); /* Цвет текста по умолчанию */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.icon-label.orange {
+    color: #FFA500; /* Оранжевый цвет для подсвеченного текста */
+}
+
+.icon:hover .category-icon {
+    color: #FFA500; /* Оранжевый цвет при наведении на иконку */
+}
+
+.icon.hovered {
+    transform: scale(1.1);
+    /* Увеличиваем иконку при наведении */
+}
+
+.category-icon {
+    font-size: 3rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.icon:hover .category-icon {
+    color: #FFA500;
+    /* Оранжевый цвет при наведении */
+}
+
+.icon:hover {
+    color: #FFA500;
+}
+
+.kupon-display {
+    margin-top: 20px;
+    display: flex;
+    /* Центрируем карточку по горизонтали */
+    justify-content: center;
+    /* Центрируем карточку по горизонтали */
+    transition: opacity 0.5s ease;
+    /* Плавный переход для изменения прозрачности */
+}
+
+.kupon-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    /* Установите желаемую ширину для карточки */
+    max-width: 100%;
+    /* Убедитесь, что карточка не выходит за границы родителя */
+    opacity: 1;
+    /* Начальная непрозрачность */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Плавная анимация появления и исчезновения */
+}
+
+.kupon-list {
+    display: flex;
+    /* Устанавливаем флекс-контейнер */
+    flex-wrap: wrap;
+    /* Позволяем карточкам переноситься на следующую строку при необходимости */
+    justify-content: center;
+    /* Центрируем карточки по горизонтали */
+    margin-top: 20px;
+}
+
+/* Анимация исчезновения */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Плавная анимация появления и исчезновения */
+    transform: scale(0.95);
+    /* Уменьшаем карточку для эффекта */
+}
+
+/* Анимация появления */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Плавная анимация появления и исчезновения */
+    transform: scale(1);
+    /* Возвращаем карточку в исходное состояние */
+}
+
+.kupon-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.more-details {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #FFA500;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.more-details:hover {
+    background-color: #e69500;
+}
