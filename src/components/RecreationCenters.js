@@ -17,7 +17,7 @@ const RecreationCenters = () => {
     const centers = [
         {
             name: 'Кибер база',
-            description: 'Комфортные номера с интернетом и развлекательными программами.',
+            description: 'Комфортные номера с интернетом.',
             image: image1,
             rating: 4.5,
             price: '5000₽/ночь',
