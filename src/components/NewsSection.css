@@ -1,7 +1,7 @@
 .news-section {
   display: flex;
   gap: 20px; /* Промежутки между блоками */
-  background-image: url('../components/assets/abstract-orange-and-white-background-vector.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../components/assets/abstract-orange-and-white-background-vector.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@
 /* Главная новость (слева) */
 .main-news {
   flex: 1; /* Занимает 3/5 пространства */
-  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -163,7 +163,7 @@
 /* Центральный блок с текстом */
 .center-image-block {
   flex: 2; /* Занимает 2/3 пространства */
-  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -186,7 +186,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -210,7 +210,7 @@
 /* Вертикальный блок актуальных новостей (справа) */
 .recent-news {
   flex: 1;
-  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -233,7 +233,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../components/assets/TESTING.jpg'); /* Замените на путь к вашему изображению */
+  background-image: url('../components/assets/white.jpg'); /* Замените на путь к вашему изображению */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
