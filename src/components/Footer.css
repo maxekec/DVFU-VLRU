@@ -102,7 +102,7 @@
   
   .footer-info a:hover {
     text-decoration: underline;
-    text-shadow: 0 0 5px rgba(255, 235, 59, 0.6);
+    text-shadow: 0 0 5px #ffa500;
   }
   
   .footer-copyright {

@@ -13,7 +13,10 @@
   width: 100%; /* Занимает всю ширину */
   z-index: 1000; /* Убедитесь, что хедер находится выше других элементов */
   font-family: 'Poppins', sans-serif; /* Новый шрифт */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+
 
 /* Уменьшенная версия шапки при прокрутке */
 .header-container.shrink {
@@ -33,6 +36,7 @@
   height: 75px;
   margin-right: 40px;
 }
+
 
 /* Меню навигации */
 .nav-menu ul {
@@ -103,12 +107,12 @@
 .search-overlay {
   position: absolute;
   top: 48px;
-  right: 90px;
+  right: 155px;
   width: 0;
   overflow: hidden;
   height: 40px;
   background-color: #fff;
-  border: 2px solid #FFA500;
+  border: 2px solid #d49010;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: width 0.5s ease;
@@ -263,4 +267,230 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+[data-theme='dark'] {
+  --background-color: #1c1c1c;
+  --text-color: #f5f5f5;
+  --header-bg-color: #333333;
+  --header-text-color: #f0f0f0;
+  --link-color: #4db8ff;
+  --button-bg-color: #007bff;
+  --button-text-color: #ffffff;
+}
+
+/* Применение этих переменных к элементам */
+[data-theme='dark'] body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .header-container {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+}
+
+[data-theme='dark'] .nav-menu a {
+  color: var(--link-color);
+}
+
+[data-theme='dark'] button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+}
+
+[data-theme='dark'] .footer-container {
+background: #1c1c1c;
+}
+
+[data-theme='dark'] .footer-container {
+  background: #202020;
+  }
+
+[data-theme='dark'] .footer-column h4 {
+color: #6bb3ff;
+}
+
+[data-theme='dark'] .footer-column ul li a {
+
+color: white;
+  
+}
+
+[data-theme='dark'] .footer-social h4 {
+
+color: #6bb3ff;
+
+}
+
+
+[data-theme='dark'] .social-icons li a i {
+
+color: #6bb3ff;
+
+}
+
+[data-theme='dark'] .footer-copyright {
+
+color: white;
+
+}
+
+[data-theme='dark'] .footer-info a {
+
+color: white;
+
+}
+
+[data-theme='dark'] .header-container {
+
+background: #202020;
+
+}
+
+[data-theme='dark'] .title{
+
+background: black;
+}
+
+
+[data-theme='dark'] .icon {
+
+background-color: black;
+
+}
+
+[data-theme='dark'] .icon-label {
+
+color: white;
+
+}
+
+[data-theme='dark'] .category-icon {
+
+
+color: white;
+
+}
+
+[data-theme='dark'] .title {
+
+  color: var(--text-color); /* Убедитесь, что цвет текста подходит для тёмной темы */
+  
+}
+
+[data-theme='dark'] .recreation-centers {
+
+  background-color: #202020; /* Основной цвет фона */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Нижняя тень */
+  0 -4px 12px rgba(0, 0, 0, 0.2); /* Верхняя тень */
+
+}
+
+[data-theme='dark'] .centers-title {
+
+color: white;
+
+
+}
+
+[data-theme='dark'] .view-all-link {
+
+color: white;
+
+}
+
+[data-theme='dark'] .schedule-title {
+
+color: white;
+
+}
+
+[data-theme='dark'] .filter-buttons button {
+
+  border: 2px solid #ffffff;
+  background-color: #202020;
+}
+
+[data-theme='dark'] .small-news-item {
+
+background-color: #202020;
+
+  color: #ffffff;
+  
+}
+
+[data-theme='dark'] .small-news-title {
+
+color: white;
+
+}
+
+[data-theme='dark'] .main-news {
+
+background-color: #202020;
+
+}
+
+
+
+[data-theme='dark'] .recent-news-item {
+
+background-color: #202020;
+
+}
+
+[data-theme='dark'] .recent-news-title,
+.no-water-title {
+
+color: white;
+
+}
+
+[data-theme='dark'] .no-water-item {
+
+background-color: #202020;
+
+}
+
+[data-theme='dark'] .no-water-title {
+
+color: white;
+
+}
+
+[data-theme='dark'] .search-overlay {
+
+
+
+  background-color: #fff;
+  border: 2px solid #ffffff;
+
+
+}
+
+[data-theme='dark'] .info-container {
+
+background-color: transparent;
+color: #6bb3ff;
+}
+
+
+[data-theme='dark'] .dropdown-menu {
+
+background-color: #202020;
+
+}
+
+[data-theme='dark'] .chat-header h3 {
+
+color: #6bb3ff;
+
+}
+
+[data-theme='dark'] .chat-body {
+
+color: #202020;
+
 }

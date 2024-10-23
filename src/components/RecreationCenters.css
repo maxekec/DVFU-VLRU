@@ -6,6 +6,7 @@
     font-family: 'Arial', sans-serif;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Нижняя тень */
                 0 -4px 12px rgba(0, 0, 0, 0.2); /* Верхняя тень */
+                transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 
@@ -185,6 +186,6 @@ h3{
 }
 
 .view-all-link:hover {
-    color: #0000009a; /* Темно-синий цвет при наведении */
+
     transform: translateY(-2px); /* Небольшой подъем текста */
 }

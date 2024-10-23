@@ -64,7 +64,7 @@
 }
 
 .chat-header {
-    background-color: #FFA500;
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
     padding: 10px;
     display: flex;
@@ -74,6 +74,7 @@
 
 .chat-header h3 {
     margin: 0;
+
     font-size: 1.2rem;
 }
 
@@ -90,6 +91,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
 
 .chat-body textarea {
