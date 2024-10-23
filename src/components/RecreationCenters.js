@@ -69,7 +69,7 @@ const RecreationCenters = () => {
             </div>
             
             {/* Link to view all recreation centers */}
-            <a href="/all-recreation-centers" className="view-all-link" data-aos="fade-up">
+            <a href="/VLRU" className="view-all-link" data-aos="fade-up">
                 Смотреть все базы отдыха
             </a>
         </div>
