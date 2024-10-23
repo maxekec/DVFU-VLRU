@@ -52,10 +52,13 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.651)); 
+  background-image: url('./components/assets/Group\ 2\ \(1\).png');
+
   backdrop-filter: blur(10px);
   
 }
+
+
 
 header {
   background-color: #007bff;

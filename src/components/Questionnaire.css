@@ -1,108 +1,167 @@
 .questionnaire-container {
   display: flex;
-  justify-content: center; /* Центрируем карточки по горизонтали */
-  align-items: flex-start; /* Вертикальное выравнивание в начале */
-  flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку, если место закончилось */
-  gap: 40px; /* Отступ между карточками */
+  justify-content: center;
+  /* Центрируем карточки по горизонтали */
+  align-items: flex-start;
+  /* Вертикальное выравнивание в начале */
+  flex-wrap: wrap;
+  /* Позволяет карточкам переноситься на новую строку, если место закончилось */
+  gap: 40px;
+  /* Отступ между карточками */
   padding: 20px;
+
 }
 
 .card {
-  width: 450px; /* Увеличенная ширина карточки */
-  height: 500px; /* Увеличенная высота карточки */
-  background-color: #f8f9fa; /* Фоновый цвет карточки */
-  border-radius: 0.1px; /* Скругленные углы */
-  position: relative; /* Для позиционирования содержимого */
-  overflow: hidden; /* Обрезка содержимого, выходящего за пределы карточки */
-  transition: transform 0.3s ease-in-out; /* Плавная анимация для карточки */
- 
+  width: 450px;
+  /* Увеличенная ширина карточки */
+  height: 500px;
+  /* Увеличенная высота карточки */
+  background-color: #f8f9fa;
+  /* Фоновый цвет карточки */
+  border-radius: 25px;
+  /* Скругленные углы */
+  position: relative;
+  /* Для позиционирования содержимого */
+  overflow: hidden;
+  /* Обрезка содержимого, выходящего за пределы карточки */
+  transition: transform 0.3s ease-in-out;
+  /* Плавная анимация для карточки */
+
 }
 
 
 
 /* Анимация для фона при наведении */
 .card:hover .background-image {
-  transform: scale(1.1); /* Увеличиваем фоновое изображение */
+  transform: scale(1.1);
+  /* Увеличиваем фоновое изображение */
 }
 
 /* Стили для фона изображения */
 .background-image {
-  position: absolute; /* Позиционирование изображения */
-  top: 0; /* Привязываем к верхней части карточки */
-  left: 0; /* Привязываем к левому краю карточки */
-  right: 0; /* Привязываем к правому краю карточки */
-  bottom: 0; /* Привязываем к нижней части карточки */
-  background-size: cover; /* Масштабируем изображение по размеру карточки */
-  background-position: center; /* Центрируем изображение */
-  transition: transform 0.3s ease; /* Плавный переход для фона */
+  position: absolute;
+  /* Позиционирование изображения */
+  top: 0;
+  /* Привязываем к верхней части карточки */
+  left: 0;
+  /* Привязываем к левому краю карточки */
+  right: 0;
+  /* Привязываем к правому краю карточки */
+  bottom: 0;
+  /* Привязываем к нижней части карточки */
+  background-size: cover;
+  /* Масштабируем изображение по размеру карточки */
+  background-position: center;
+  /* Центрируем изображение */
+  transition: transform 0.3s ease;
+  /* Плавный переход для фона */
 }
 
 .card-content {
-  position: absolute; /* Позиционирование содержимого */
-  bottom: 0; /* Привязываем к нижней части карточки */
-  left: 0; /* Привязываем к левому краю карточки */
-  right: 0; /* Привязываем к правому краю карточки */
-  padding: 20px; /* Отступы для содержимого */
-  color: white; /* Цвет текста */
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
-  text-align: left; /* Выравнивание текста */
-  display: flex; /* Flexbox для вертикального выравнивания */
-  flex-direction: column; /* Вертикальная ориентация содержимого */
-  justify-content: flex-end; /* Выравнивание содержимого к нижней части */
-  height: 100%; /* Заполнение всей высоты карточки */
-  overflow: hidden; /* Обрезка текста, выходящего за пределы карточки */
+  position: absolute;
+  /* Позиционирование содержимого */
+  bottom: 0;
+  /* Привязываем к нижней части карточки */
+  left: 0;
+  /* Привязываем к левому краю карточки */
+  right: 0;
+  /* Привязываем к правому краю карточки */
+  padding: 20px;
+  /* Отступы для содержимого */
+  color: white;
+  /* Цвет текста */
+  background: rgba(0, 0, 0, 0.5);
+  /* Полупрозрачный фон для текста */
+  text-align: left;
+  /* Выравнивание текста */
+  display: flex;
+  /* Flexbox для вертикального выравнивания */
+  flex-direction: column;
+  /* Вертикальная ориентация содержимого */
+  justify-content: flex-end;
+  /* Выравнивание содержимого к нижней части */
+  height: 100%;
+  /* Заполнение всей высоты карточки */
+  overflow: hidden;
+  /* Обрезка текста, выходящего за пределы карточки */
 }
 
 /* Другие стили остаются прежними */
 .card-title {
-  font-size: 1.5rem; /* Размер заголовка */
-  margin: 0; /* Убираем отступы */
+  font-size: 1.5rem;
+  /* Размер заголовка */
+  margin: 0;
+  /* Убираем отступы */
 }
 
 .card-description {
-  flex-grow: 1; /* Позволяет описанию занимать оставшееся пространство */
-  margin: 10px 0; /* Отступы сверху и снизу */
-  overflow: hidden; /* Обрезка переполненного текста */
-  text-overflow: ellipsis; /* Добавляет многоточие, если текст слишком длинный */
-  display: -webkit-box; /* Для работы с многоточием в Safari */
-  -webkit-box-orient: vertical; /* Установка ориентации для многоточия */
+  flex-grow: 1;
+  /* Позволяет описанию занимать оставшееся пространство */
+  margin: 10px 0;
+  /* Отступы сверху и снизу */
+  overflow: hidden;
+  /* Обрезка переполненного текста */
+  text-overflow: ellipsis;
+  /* Добавляет многоточие, если текст слишком длинный */
+  display: -webkit-box;
+  /* Для работы с многоточием в Safari */
+  -webkit-box-orient: vertical;
+  /* Установка ориентации для многоточия */
 }
 
 .card-stats {
-  margin-top: 10px; /* Отступ сверху для статистики */
+  margin-top: 10px;
+  /* Отступ сверху для статистики */
 }
 
 /* Фоновое изображение для каждой карточки */
 .card:nth-child(1) .background-image {
-  background-image: url('./assets/photo-vld.jpg'); /* Фоновое изображение для первой карточки */
+  background-image: url('./assets/young\ man\ explaining\ lesson\ material\ standing\ next\ to\ whiteboard\ \(1\).png');
+  /* Фоновое изображение для первой карточки */
+  top: 15px;
+  left: 85px;
 }
 
 .card:nth-child(2) .background-image {
-  background-image: url('./assets/photo-vld.jpg'); /* Фоновое изображение для второй карточки */
+  background-image: url('./assets/youg\ people\ discussing\ the\ project.png');
+  /* Фоновое изображение для второй карточки */
+
 }
 
 .card:nth-child(3) .background-image {
-  background-image: url('./assets/photo-vld.jpg'); /* Фоновое изображение для третьей карточки */
+  background-image: url('./assets/businesswoman\ in\ red\ suit\ looking\ at\ phone.png');
+  /* Фоновое изображение для третьей карточки */
 }
 
 /* Стили для кнопки */
 button {
-  padding: 10px 15px; /* Внутренние отступы */
-  border: none; /* Убираем границу */
-  border-radius: 4px; /* Скругленные углы */
-  background-color: #ffffff; /* Цвет фона кнопки */
-  color: rgb(0, 0, 0); /* Цвет текста */
-  font-size: 1rem; /* Размер шрифта */
-  cursor: pointer; /* Курсор при наведении */
-  transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+  padding: 10px 15px;
+  /* Внутренние отступы */
+  border: none;
+  /* Убираем границу */
+  border-radius: 4px;
+  /* Скругленные углы */
+  background-color: #ffffff;
+  /* Цвет фона кнопки */
+  color: rgb(0, 0, 0);
+  /* Цвет текста */
+  font-size: 1rem;
+  /* Размер шрифта */
+  cursor: pointer;
+  /* Курсор при наведении */
+  transition: background-color 0.3s ease;
+  /* Плавный переход цвета фона */
 }
 
 button:hover {
-  background-color: #FFA500; /* Цвет фона кнопки при наведении */
+  background-color: #FFA500;
+  /* Цвет фона кнопки при наведении */
 }
 
 button:focus {
-  outline: none; /* Убираем обводку при фокусе */
+  outline: none;
+  /* Убираем обводку при фокусе */
 }
 
 /* Подключение шрифта для всех элементов */
@@ -114,19 +173,23 @@ body {
 .card-title {
   font-size: 1.5rem;
   margin: 0;
-  font-weight: 700; /* Жирный заголовок */
+  font-weight: 700;
+  /* Жирный заголовок */
 }
 
 .card-description {
-  font-weight: 400; /* Нормальная жирность для описания */
+  font-weight: 400;
+  /* Нормальная жирность для описания */
   margin: 10px 0;
 }
 
 .card-stats {
   margin-top: 10px;
-  font-weight: 700; /* Сделаем цифры жирными */
+  font-weight: 700;
+  /* Сделаем цифры жирными */
 }
 
 button {
-  font-weight: 700; /* Жирная кнопка */
+  font-weight: 700;
+  /* Жирная кнопка */
 }

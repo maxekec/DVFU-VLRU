@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Light background for the body */
-    color: #333; /* Default text color */
-    
+
+    color: #333;
+    /* Default text color */
+
 
 }
 
@@ -10,10 +11,17 @@ body {
     padding: 100px;
     text-align: center;
     max-width: 100%;
-    background: none;
-    margin-bottom: 50px; /* Отступ снизу */
-    position: relative; /* Для использования псевдоэлементов */
-    
+    margin-bottom: 50px;
+    /* Отступ снизу */
+    position: relative;
+    /* Для использования псевдоэлементов */
+
+    background-size: cover;
+    /* Опция для масштабирования изображения, чтобы оно покрывало весь элемент */
+    background-position: 50% left; /* Сдвиг на 10% от левого края */
+    /* Центрирование изображения */
+    background-repeat: no-repeat;
+    /* Отключает повторение изображения */
 }
 
 
@@ -24,9 +32,10 @@ body {
     margin: 2% auto;
     margin-bottom: 25px;
     font-size: 36px;
-    color: #333; /* Darker text color */
-   
-    
+    color: #333;
+    /* Darker text color */
+
+
 }
 
 
@@ -40,7 +49,8 @@ body {
 }
 
 .movie-card {
-    background: none; /* White background for the card */
+    background: none;
+    /* White background for the card */
     border-radius: 15px;
     overflow: hidden;
     padding: 35px;
@@ -48,13 +58,17 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 400px;
     height: 600px;
-    margin: 0 20px; /* Margin for spacing */
-    position: relative; /* Position relative for absolute children */
-    opacity: 0.95; /* Slightly transparent */
+    margin: 0 20px;
+    /* Margin for spacing */
+    position: relative;
+    /* Position relative for absolute children */
+    opacity: 0.95;
+    /* Slightly transparent */
 }
 
 .movie-card:hover {
-    transform: scale(1.05) rotate(1deg); /* Slight rotation effect */
+    transform: scale(1.05) rotate(1deg);
+    /* Slight rotation effect */
 }
 
 .movie-poster {
@@ -65,14 +79,17 @@ body {
 }
 
 .movie-card:hover .movie-poster {
-    opacity: 0.8; /* Darken poster on hover */
+    opacity: 0.8;
+    /* Darken poster on hover */
 }
 
 .movie-details {
-    color: white; /* Use a contrasting color for visibility */
+    color: white;
+    /* Use a contrasting color for visibility */
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center; /* Center align text */
+    text-align: center;
+    /* Center align text */
 }
 
 /* Styles for the filter buttons */
@@ -85,17 +102,22 @@ body {
 .filter-buttons button {
     margin: 0 10px;
     padding: 10px 20px;
-    border: 2px solid #FFA500; /* Orange border */
+    border: 2px solid #FFA500;
+    /* Orange border */
     border-radius: 5px;
-    background-color: #ffffff; /* White background for buttons */
-    color: #FFA500; /* Orange text color */
+    background-color: #ffffff;
+    /* White background for buttons */
+    color: #FFA500;
+    /* Orange text color */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .filter-buttons button:hover {
-    background-color: #FFA500; /* Orange background on hover */
-    color: #ffffff; /* White text on hover */
+    background-color: #FFA500;
+    /* Orange background on hover */
+    color: #ffffff;
+    /* White text on hover */
 }
 
 /* Darkened style for movie cards */
@@ -104,45 +126,58 @@ body {
     transition: opacity 0.3s;
 }
 
-h3{
-color: #000000;
+h3 {
+    color: #000000;
 }
 
 
 /* Styles for ticket button and heart icon */
 .ticket-button {
     position: absolute;
-    top: 510px; /* Positioning from the top */
-    right: 245px; /* Positioning from the right */
-    background-color: #ffffff; /* Orange background */
-    color: rgb(0, 0, 0); /* White text */
+    top: 510px;
+    /* Positioning from the top */
+    right: 245px;
+    /* Positioning from the right */
+    background-color: #ffffff;
+    /* Orange background */
+    color: rgb(0, 0, 0);
+    /* White text */
     border: none;
     border-radius: 7px;
     padding: 5px 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-    
+
 }
 
 .ticket-button:hover {
-    background-color: #e69500; /* Darker orange on hover */
+    background-color: #e69500;
+    /* Darker orange on hover */
 }
 
 /* Heart icon styles */
 .heart-icon {
     position: absolute;
-    top: 510px; /* Positioning from the top */
-    left: 50px; /* Positioning from the right, adjust to avoid overlap */
-    width: 28px; /* Adjust size as needed */
+    top: 510px;
+    /* Positioning from the top */
+    left: 50px;
+    /* Positioning from the right, adjust to avoid overlap */
+    width: 28px;
+    /* Adjust size as needed */
     height: 28px;
     cursor: pointer;
-    fill: none; /* No fill by default */
-    stroke: #ffffff; /* Orange stroke */
-    stroke-width: 2; /* Stroke width */
-    transition: fill 0.3s; /* Transition for fill color */
+    fill: none;
+    /* No fill by default */
+    stroke: #ffffff;
+    /* Orange stroke */
+    stroke-width: 2;
+    /* Stroke width */
+    transition: fill 0.3s;
+    /* Transition for fill color */
 }
 
 /* Fill the heart when hovered */
 .heart-icon:hover {
-    fill: red; /* Red fill on hover */
+    fill: red;
+    /* Red fill on hover */
 }
