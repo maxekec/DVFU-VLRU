@@ -12,6 +12,7 @@ import ChatWidget from './components/ChatWidget';
 import Questionnaire from './components/Questionnaire';
 import Footer from './components/Footer';
 import VLRU from './components/VLRU';
+import Afishi from './components/Afishi'; // Импортируйте новый компонент
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/cinema" element={<CinemaSchedule />} />
         <Route path="/recreation-centers" element={<RecreationCenters />} />
         <Route path="/lovi-kupon" element={<LoviKupon />} />
+        <Route path="/afishi" element={<Afishi />} /> {/* Используем компонент Afishi */}
         <Route path="/questionnaire" element={<Questionnaire />} />
         <Route path="/vlru" element={<VLRU />} />
       </Routes>

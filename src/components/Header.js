@@ -1,22 +1,24 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
 import logo from './assets/VLRU png.png';
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon, faDollarSign, faEuroSign, faYenSign, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate(); // Инициализируем useNavigate
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [weather, setWeather] = useState(null);
   const [currencyRates, setCurrencyRates] = useState({ usd: null, eur: null, cny: null });
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [theme, setTheme] = useState('light'); // Новый стейт для темы
+  const [theme, setTheme] = useState('light');
+  const [isScrolled, setIsScrolled] = useState(false); // Новый стейт для отслеживания скролла
 
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
 
-  // Логика для смены темы
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
@@ -45,7 +47,7 @@ const Header = () => {
     const fetchCurrencyRates = async () => {
       try {
         const response = await fetch(
-          `https://v6.exchangerate-api.com/v6/df27a859f390a59361f64b48/latest/RUB`
+          `https://v6.exchangerate-api.com/v6/cb4fd87d1892bc7322eb5dff/latest/RUB`
         );
         if (!response.ok) throw new Error("Currency fetch error");
         const data = await response.json();
@@ -105,11 +107,10 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const header = document.querySelector('.header-container');
-      if (window.scrollY > 0) {
-        header.classList.add('scrolled');
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
       } else {
-        header.classList.remove('scrolled');
+        setIsScrolled(false);
       }
     };
 
@@ -121,9 +122,15 @@ const Header = () => {
 
   return (
     <>
-      <header className="header-container">
+      <header className={`header-container ${isScrolled ? 'shrink' : ''}`}>
         <div className="header-content">
-          <img src={logo} alt="Logo" className="logo" />
+        <img 
+            src={logo} 
+            alt="Logo" 
+            className="logo" 
+            onClick={() => navigate('/')} // Добавляем функцию навигации
+            style={{ cursor: 'pointer' }} // Курсор меняется на указатель
+          />
           <nav className="nav-menu" ref={menuRef}>
             <ul>
               <li>
@@ -170,14 +177,14 @@ const Header = () => {
                 
                 <div className={`dropdown-menu ${dropdownVisible === 'poster' ? 'visible' : ''}`} ref={dropdownRef}>
                   <ul>
-                    <li><a href="#">Концерты</a></li>
-                    <li><a href="#">Театры</a></li>
-                    <li><a href="#">Фестивали</a></li>
+                  <li><a href="/afishi">Концерты</a></li>
+                    <li><a href="/afishi">Театры</a></li>
+                    <li><a href="/afishi">Фестивали</a></li>
                   </ul>
                 </div>
               </li>
-              <li><a href="#">Авто на Дроме</a></li>
-              <li><a href="#">FarPost - объявления</a></li>
+              <li><a href="https://www.drom.ru/">Авто на Дроме</a></li>
+              <li><a href="https://www.farpost.ru/">FarPost - объявления</a></li>
             </ul>
           </nav>
         </div>

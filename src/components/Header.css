@@ -1,89 +1,68 @@
-/* Контейнер для хедера */
+
 .header-container {
-  background: linear-gradient(180deg, #ffffff 93%, #ffffff 100%); /* Основной фон с градиентом */
+  background: linear-gradient(180deg, #ffffff 93%, #ffffff 100%); 
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #333; /* Черный текст */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Легкая тень */
-  position: sticky; /* Фиксированное позиционирование */
-  top: 0; /* Привязка к верхней части страницы */
-  left: 0; /* Привязка к левой части страницы */
-  width: 100%; /* Занимает всю ширину */
-  z-index: 1000; /* Убедитесь, что хедер находится выше других элементов */
-  font-family: 'Poppins', sans-serif; /* Новый шрифт */
+  color: #333; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  position: sticky; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1000; 
+  font-family: 'Poppins', sans-serif; 
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-
-
-/* Уменьшенная версия шапки при прокрутке */
-.header-container.shrink {
-  padding: 10px 40px; /* Уменьшаем отступы */
-  height: 60px; /* Уменьшаем высоту шапки */
-}
-
-/* Контент хедера */
 .header-content {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-/* Лого */
 .logo {
   height: 75px;
   margin-right: 40px;
 }
 
-
-/* Меню навигации */
 .nav-menu ul {
   display: flex;
   gap: 30px;
   list-style: none;
 }
-
 .nav-menu a {
-  font-weight: 700; /* Жирный шрифт */
-  color: #333; /* Черный текст */
+  font-weight: 700; 
+  color: #333; 
   transition: color 0.3s;
-  position: relative; /* Для псевдоэлемента ::after */
-  padding-bottom: 5px; /* Отступ внизу для подчеркивания */
+  position: relative; 
+  padding-bottom: 5px; 
 }
-
 .nav-menu a:hover {
-  color: #FFA500; /* Цвет при наведении */
+  color: #FFA500; 
 }
-
 .nav-menu a.active {
-  color: #FFA500; /* Цвет для активного состояния */
+  color: #FFA500; 
 }
-
 .nav-menu a::after {
-  content: ''; /* Псевдоэлемент для подчеркивания */
+  content: ''; 
   position: absolute;
-  width: 0%; /* Изначально подчеркивание скрыто */
+  width: 0%; 
   height: 2px;
-  background-color: #FFA500; /* Цвет подчеркивания */
+  background-color: #FFA500; 
   left: 0;
   bottom: 0;
-  transition: width 0.3s ease; /* Плавное появление подчеркивания */
+  transition: width 0.3s ease; 
 }
-
 .nav-menu a:hover::after {
-  width: 100%; /* Подчеркивание заполняет весь элемент при наведении */
+  width: 100%; 
 }
-
-/* Правый блок (поиск + информация) */
 .right-section {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
-/* Блок с погодой и валютами */
 .info-box {
   display: flex;
   position: absolute;
@@ -102,8 +81,6 @@
   z-index: 1;
   font-family: 'Poppins', sans-serif;
 }
-
-/* Контейнер для поиска */
 .search-overlay {
   position: absolute;
   top: 48px;
@@ -117,29 +94,25 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: width 0.5s ease;
   z-index: 1;
-  display: flex; /* Добавлено для выравнивания */
-  align-items: center; /* Добавлено для вертикального центрирования */
+  display: flex; 
+  align-items: center; 
 }
-
 .search-overlay.active {
   width: 20%;
 }
-
 .search-form {
-  display: flex; /* Убедитесь, что кнопка и инпут находятся на одной линии */
-  align-items: center; /* Выравнивание по вертикали */
-  width: 100%; /* Занимает всю ширину контейнера */
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
 }
-
 .search-form input {
   flex: 1;
   padding: 10px;
   font-size: 1rem;
   border: none;
   outline: none;
-  margin-top: -17px; /* Небольшой отрицательный отступ для приподнимания */
+  margin-top: -17px; 
 }
-
 .search-form button {
   background-color: #FFA500;
   color: white;
@@ -148,45 +121,55 @@
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 1rem;
-  margin-top: -17px; /* Небольшой отрицательный отступ для приподнимания */
+  margin-top: -17px; 
 }
-
 .search-form button:hover {
+
   background-color: #FFA500;
 }
-
 .search-icon {
-  background: none;
+background: #202020;
   margin-left: 430px;
   border: none;
-  color: #333; /* Черный цвет иконки */
+  color: #ffffff; 
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s;
+
+}
+
+.theme-toggle {
+
+background: #202020;
+color: #FFF;
+transition: transform 0.3s;
+}
+
+.theme-toggle:hover{
+
+  transform: scale(1.1);
+  
 }
 
 .search-icon:hover {
   transform: scale(1.1);
 }
-
 .weather-info {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
-
 .info-container {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 .weather-info, .currency-info {
   display: flex;
   gap: 5px;
   align-items: center;
-}
 
+}
 .weather-info span {
   margin-left: 5px;
   font-weight: bold;
@@ -195,9 +178,8 @@
 .currency-info {
   display: flex;
   gap: 10px;
+  width: 65px;
 }
-
-/* Контейнер для выпадающего меню */
 .dropdown-menu {
   position: absolute;
   background-color: white;
@@ -205,63 +187,51 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 1000;
-  top: 60px; /* Регулируйте это значение в зависимости от позиции меню */
+  top: 60px; 
   left: 0;
   opacity: 0;
-  visibility: hidden; /* Скрываем меню по умолчанию */
-  transform: translateY(-10px); /* Начальное смещение для эффекта */
+  visibility: hidden; 
+  transform: translateY(-10px); 
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  min-height: 100px; /* Минимальная высота для корректного отображения всех элементов */
-  overflow: hidden; /* Предотвращает выход элементов за границы */
+  min-height: 100px; 
+  overflow: hidden; 
 }
-
 .dropdown-menu.visible {
   opacity: 1; /* Делаем меню видимым */
   visibility: visible; /* Делаем меню доступным */
   transform: translateY(0); /* Вернуть в исходное положение */
 }
-
-/* Индивидуальная ширина для каждого меню */
 .dropdown-news {
-  width: 200px; /* Пример ширины для меню "Новости" */
+  width: 200px; 
 }
-
 .dropdown-services {
-  width: 10px; /* Пример ширины для меню "Услуги" */
+  width: 10px; 
 }
-
 .dropdown-avisha {
-  width: 180px; /* Пример ширины для меню "Авиша" */
+  width: 180px; 
 }
-
 .dropdown-drom {
-  width: 220px; /* Пример ширины для меню "Авто на Дроме" */
+  width: 220px; 
 }
-
 .dropdown-farpost {
-  width: 300px; /* Пример ширины для меню "FarPost - объявления" */
+  width: 300px; 
 }
-
-/* Стили для элементов меню */
 .dropdown-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .dropdown-menu li a {
   text-decoration: none;
   color: #333;
   font-weight: 1500;
   display: block;
-  padding: 10px 0; /* Добавьте отступы, если элементы сливаются */
+  padding: 10px 0; 
 }
-
 .dropdown-menu li a:hover {
   color: #FFA500;
 }
 
-/* Анимация появления меню */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -280,7 +250,7 @@
   --button-text-color: #ffffff;
 }
 
-/* Применение этих переменных к элементам */
+
 [data-theme='dark'] body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -301,7 +271,7 @@
 }
 
 [data-theme='dark'] .footer-container {
-background: #1c1c1c;
+background: #202020;
 }
 
 [data-theme='dark'] .footer-container {
@@ -351,13 +321,13 @@ background: #202020;
 
 [data-theme='dark'] .title{
 
-background: black;
+background: #202020;
 }
 
 
 [data-theme='dark'] .icon {
 
-background-color: black;
+background-color: #202020;
 
 }
 
@@ -376,15 +346,15 @@ color: white;
 
 [data-theme='dark'] .title {
 
-  color: var(--text-color); /* Убедитесь, что цвет текста подходит для тёмной темы */
+  color: var(--text-color); 
   
 }
 
 [data-theme='dark'] .recreation-centers {
 
-  background-color: #202020; /* Основной цвет фона */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Нижняя тень */
-  0 -4px 12px rgba(0, 0, 0, 0.2); /* Верхняя тень */
+  background-color: #202020; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 
+  0 -4px 12px rgba(0, 0, 0, 0.2); 
 
 }
 
@@ -474,6 +444,7 @@ color: white;
 
 background-color: transparent;
 color: #6bb3ff;
+
 }
 
 
@@ -503,18 +474,19 @@ background-color: #202020;
 
 [data-theme='dark'] p {
 
-  background-color: transparent; /* или подходящий цвет, если требуется */
-  color: var(--text-color); /* для текстового цвета */
-
+  background-color: transparent; 
+  color: var(--text-color); 
 }
 
 [data-theme='dark'] small {
 
-  background-color: transparent; /* или подходящий цвет, если требуется */
-  color: var(--text-color); /* для текстового цвета */
+  background-color: transparent; 
+  color: var(--text-color); 
 
 }
 
+[data-theme='dark'] .kupon-card {
 
-
-
+background-color: #202020;
+transition: background-color 0.5s ease, color 0.5s ease;
+}

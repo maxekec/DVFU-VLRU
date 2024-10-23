@@ -55,7 +55,6 @@ const Footer = () => {
 
         <div className="footer-info">
 
-          <h4> Сайты Владивостока</h4>
           <a href="#">Авто</a>
           <a href="#">Афиша</a>
           <a href="#">Кино</a>
