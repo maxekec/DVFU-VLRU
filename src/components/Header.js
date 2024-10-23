@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
 import './Header.css';
 import logo from './assets/VLRU.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faDollarSign, faEuroSign, faYenSign, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
+  const navigate = useNavigate(); // Инициализируем useNavigate
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [dropdownVisible, setDropdownVisible] = useState(null);
@@ -35,7 +37,7 @@ const Header = () => {
     const fetchCurrencyRates = async () => {
       try {
         const response = await fetch(
-          `https://v6.exchangerate-api.com/v6/df27a859f390a59361f64b48/latest/RUB`
+          `https://v6.exchangerate-api.com/v6/cb4fd87d1892bc7322eb5dff/latest/RUB`
         );
         if (!response.ok) throw new Error("Currency fetch error");
         const data = await response.json();
@@ -113,7 +115,13 @@ const Header = () => {
     <>
       <header className="header-container">
         <div className="header-content">
-          <img src={logo} alt="Logo" className="logo" />
+          <img 
+            src={logo} 
+            alt="Logo" 
+            className="logo" 
+            onClick={() => navigate('/')} // Добавляем функцию навигации
+            style={{ cursor: 'pointer' }} // Курсор меняется на указатель
+          />
           <nav className="nav-menu" ref={menuRef}>
             <ul>
               <li>
@@ -160,9 +168,9 @@ const Header = () => {
                 
                 <div className={`dropdown-menu ${dropdownVisible === 'poster' ? 'visible' : ''}`} ref={dropdownRef}>
                   <ul>
-                    <li><a href="#">Концерты</a></li>
-                    <li><a href="#">Театры</a></li>
-                    <li><a href="#">Фестивали</a></li>
+                    <li><a href="/afishi">Концерты</a></li>
+                    <li><a href="/afishi">Театры</a></li>
+                    <li><a href="/afishi">Фестивали</a></li>
                   </ul>
                 </div>
               </li>

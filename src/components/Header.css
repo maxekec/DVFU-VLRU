@@ -264,3 +264,12 @@
     transform: translateY(0);
   }
 }
+
+.logo {
+  transition: transform 0.3s ease; /* Плавный переход */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Увеличение логотипа при наведении */
+}
+

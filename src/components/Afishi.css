@@ -1,0 +1,175 @@
+.afishi-container {
+    padding: 90px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.afishi-container h1 {
+    font-size: 2rem;
+    color: #333;
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.afisha-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.events-slider {
+    margin-top: 20px;
+}
+
+.event-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 580px; /* Высота карточки с дополнительным местом для рейтинга */
+    position: relative;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.event-card {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Сдвиньте контент вверх */
+    height: 950px; /* Увеличьте высоту карточки, если это необходимо */
+    position: relative;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.event-card img {
+    width: 100%;
+    height: 650px; /* Увеличьте высоту изображения */
+    object-fit: cover; /* Изображение будет полностью вмещаться в карточку */
+}
+
+.event-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.event-date, .event-location {
+    color: #666;
+    margin: 5px 0;
+}
+
+.event-card p {
+    flex-grow: 1;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 600px;
+    position: fixed; /* Используйте fixed для позиционирования */
+    top: 120px; /* Задайте расстояние от верхней части экрана */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Корректировка для центрирования */
+    z-index: 1000; /* Убедитесь, что модальное окно находится выше других элементов */
+}
+
+
+.modal img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.close-modal {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.close-modal:hover {
+    background-color: #c82333;
+}
+
+/* Новый контейнер для событий */
+.new-events-container {
+    margin-top: 40px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.new-events-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.new-events-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.new-event-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.new-event-card:hover {
+    transform: scale(1.05);
+}
+
+.new-event-card img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
