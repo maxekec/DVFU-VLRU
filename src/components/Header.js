@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
-import logo from './assets/VLRU.jpg';
+import logo from './assets/VLRU png.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSun, faDollarSign, faEuroSign, faYenSign, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faSun, faMoon, faDollarSign, faEuroSign, faYenSign, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [searchVisible, setSearchVisible] = useState(false);
@@ -11,9 +11,19 @@ const Header = () => {
   const [weather, setWeather] = useState(null);
   const [currencyRates, setCurrencyRates] = useState({ usd: null, eur: null, cny: null });
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [theme, setTheme] = useState('light'); // Новый стейт для темы
 
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
+
+  // Логика для смены темы
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -172,7 +182,7 @@ const Header = () => {
           </nav>
         </div>
 
-        {/* Добавляем сюда контейнер с погодой и валютами */}
+        {/* Контейнер с погодой и валютами */}
         <div className="info-container right-section">
           <div className="weather-info">
             {weather && (
@@ -217,6 +227,11 @@ const Header = () => {
               <button type="submit">Найти</button>
             </form>
           </div>
+
+          {/* Кнопка для переключения темы */}
+          <button className="theme-toggle" onClick={toggleTheme}>
+            <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} />
+          </button>
         </div>
       </header>
     </>
