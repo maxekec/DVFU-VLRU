@@ -1,140 +1,179 @@
 .footer-container {
-    background: #ffffff;
-    color: #fff;
-    padding: 20px 30px;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 50px 120px rgba(0, 0, 0, 1.5); /* Легкая тень */
-    border-top: 1px solid #ccc;
-    width: 100%;
-    text-align: left;
-  }
-  
-  
-  .footer-links {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 30px; /* Чуть больше отступ */
-  }
-  
+  background: #ffffff;
+  color: #fff;
+  padding: 20px 30px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 1.5); /* Light shadow */
+  border-top: 1px solid #ccc;
+  width: 100%;
+  text-align: left;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px; /* Increased margin */
+}
+
+.footer-column {
+  width: 22%; /* Adjusted for larger screens */
+}
+
+.footer-column h4 {
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #FFA500;
+  padding-bottom: 6px;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #FFA500;
+  text-shadow: 0 5px 8px rgba(0, 0, 0, 0.7);
+}
+
+.footer-social {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-social h4 {
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-icons li {
+  margin: 0 12px;
+}
+
+.social-icons li a img {
+  width: 35px; /* Slightly larger icons */
+  height: 35px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons li a:hover img {
+  transform: scale(1.15); /* Smoother scaling */
+  box-shadow: 0 0 15px #000000cc; /* Stronger glow */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  padding-top: 20px; /* Increased padding */
+  border-top: 1px solid #FFA500;
+}
+
+.footer-info a {
+  color: #000000;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.footer-info a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 5px #ffa500;
+}
+
+.footer-copyright {
+  text-align: right;
+  font-size: 14px;
+  color: #000000;
+}
+
+.footer-copyright a {
+  color: #FFA500;
+  text-decoration: none;
+}
+
+.footer-copyright a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Positioning */
+footer {
+  position: relative;
+  margin-top: auto;
+  padding: 20px 0;
+}
+
+.social-icons li a i {
+  font-size: 35px; /* Icon size */
+  color: #000000; /* Icon color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons li a:hover i {
+  transform: scale(1.15);
+  color: #FFA500; /* Hover color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .footer-column {
-    width: 22%;
+    width: 48%; /* Width of columns on tablets */
+    margin-bottom: 20px; /* Space between columns */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 15px; /* Reduced padding for mobile */
+  }
+
+  .footer-column {
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 15px; /* Reduced margin for mobile */
+  }
+
   .footer-column h4 {
-    color: #000000;
-    font-size: 18px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #FFA500;
-    padding-bottom: 6px;
+    font-size: 16px; /* Slightly smaller headings */
   }
-  
-  .footer-column ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-column ul li {
-    margin-bottom: 10px;
-  }
-  
+
   .footer-column ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 15px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-size: 14px; /* Smaller font size for links */
   }
-  
-  .footer-column ul li a:hover {
-    color: #FFA500;
-    text-shadow: 0 5 8px rgba(0, 0, 0, 0.7);
-  }
-  
-  .footer-social {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .footer-social h4 {
-    color: #000000;
-    font-size: 20px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .social-icons li {
-    margin: 0 12px;
-  }
-  
-  .social-icons li a img {
-    width: 35px; /* Чуть больше иконки */
-    height: 35px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .social-icons li a:hover img {
-    transform: scale(1.15); /* Более плавное увеличение */
-    box-shadow: 0 0 15px #000000cc; /* Сильнее свечение */
-  }
-  
+
   .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-    padding-top: 20px; /* Увеличили отступ */
-    border-top: 1px solid #FFA500;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    font-size: 14px; /* Adjust font size */
   }
-  
-  .footer-info a {
-    color: #000000;
-    text-decoration: none;
-    margin-right: 12px;
+
+  .footer-info {
+    margin-bottom: 10px; /* Space between info and copyright */
   }
-  
-  .footer-info a:hover {
-    text-decoration: underline;
-    text-shadow: 0 0 5px #ffa500;
-  }
-  
+
   .footer-copyright {
-    text-align: right;
-    font-size: 14px;
-    color: #000000;
+    text-align: left; /* Align copyright to the left */
   }
-  
-  .footer-copyright a {
-    color: #FFA500;
-    text-decoration: none;
-  }
-  
-  .footer-copyright a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Фиксация футера */
-  footer {
-    position: relative;
-    margin-top: auto;
-    padding: 20px 0;
-  }
-  
-  .social-icons li a i {
-    font-size: 35px; /* Размер иконок */
-    color: #000000; /* Цвет иконок */
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .social-icons li a:hover i {
-    transform: scale(1.15);
-    color: #FFA500; /* Цвет при наведении */
-  }
-  
+}

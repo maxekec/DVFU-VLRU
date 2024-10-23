@@ -123,7 +123,10 @@ const Header = () => {
     <>
       <header className="header-container">
         <div className="header-content">
-          <img src={logo} alt="Logo" className="logo" />
+        <a href="/">
+  <img src={logo} alt="Logo" className="logo" />
+</a>
+
           <nav className="nav-menu" ref={menuRef}>
             <ul>
               <li>

@@ -4,156 +4,177 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 2rem; /* Title size */
     color: #333;
-    background-color: #fff;
-    /* Белый фон */
-    display: inline-block;
-    /* Для центрирования фона */
-    padding: 10px 20px;
-    /* Отступы для блока с названием */
-    border-radius: 12px;
-    /* Радиус для сглаживания углов */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Легкая тень */
-    margin-bottom: 30px;
+    background-color: #fff; /* White background */
+    display: inline-block; /* Center background */
+    padding: 10px 20px; /* Title padding */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-bottom: 30px; /* Space below title */
 }
 
 .icons-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 40px; /* Space between icons */
     margin-bottom: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* Центрирование контента */
-    font-size: 1.2rem;
+    justify-content: center; /* Center content */
+    font-size: 1.2rem; /* Default font size */
     background-color: #fff;
     padding: 20px;
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
-    width: 100px;
-    cursor: pointer;
-    /* Фиксированная ширина */
-    height: 100px;
-    /* Фиксированная высота */
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    cursor: pointer; /* Pointer on hover */
 }
 
 .icon-label {
-    margin-top: 10px;
-    color: rgb(0, 0, 0); /* Цвет текста по умолчанию */
-    font-weight: bold;
-    transition: color 0.3s ease; /* Плавный переход цвета */
+    margin-top: 10px; /* Space above label */
+    color: rgb(0, 0, 0); /* Default text color */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .icon-label.orange {
-    color: #FFA500; /* Оранжевый цвет для подсвеченного текста */
+    color: #FFA500; /* Highlighted text color */
 }
 
 .icon:hover .category-icon {
-    color: #FFA500; /* Оранжевый цвет при наведении на иконку */
+    color: #FFA500; /* Orange on hover */
 }
 
 .icon.hovered {
-    transform: scale(1.1);
-    /* Увеличиваем иконку при наведении */
+    transform: scale(1.1); /* Increase size on hover */
 }
 
 .category-icon {
-    font-size: 3rem;
-    color: #333;
-    transition: color 0.3s ease;
+    font-size: 3rem; /* Icon size */
+    color: #333; /* Default color */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .icon:hover .category-icon {
-    color: #FFA500;
-    /* Оранжевый цвет при наведении */
+    color: #FFA500; /* Orange on hover */
 }
 
 .icon:hover {
-    color: #FFA500;
+    color: #FFA500; /* Orange on hover */
 }
 
 .kupon-display {
-    margin-top: 20px;
-    display: flex;
-    /* Центрируем карточку по горизонтали */
-    justify-content: center;
-    /* Центрируем карточку по горизонтали */
-    transition: opacity 0.5s ease;
-    /* Плавный переход для изменения прозрачности */
+    margin-top: 20px; /* Space above display */
+    display: flex; /* Center card horizontally */
+    justify-content: center; /* Center card horizontally */
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
 }
 
 .kupon-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 300px;
-    /* Установите желаемую ширину для карточки */
-    max-width: 100%;
-    /* Убедитесь, что карточка не выходит за границы родителя */
-    opacity: 1;
-    /* Начальная непрозрачность */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    /* Плавная анимация появления и исчезновения */
+    background: #fff; /* White background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px; /* Inner padding */
+    margin: 20px; /* Margin around card */
+    text-align: center; /* Center text */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Ellipsis for overflow text */
+    width: 300px; /* Desired card width */
+    max-width: 100%; /* Prevent overflow */
+    opacity: 1; /* Initial opacity */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animations */
 }
 
 .kupon-list {
-    display: flex;
-    /* Устанавливаем флекс-контейнер */
-    flex-wrap: wrap;
-    /* Позволяем карточкам переноситься на следующую строку при необходимости */
-    justify-content: center;
-    /* Центрируем карточки по горизонтали */
-    margin-top: 20px;
+    display: flex; /* Flex container for cards */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center cards horizontally */
+    margin-top: 20px; /* Space above list */
 }
 
-/* Анимация исчезновения */
+/* Fade out animation */
 .fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    /* Плавная анимация появления и исчезновения */
-    transform: scale(0.95);
-    /* Уменьшаем карточку для эффекта */
+    opacity: 0; /* Fully transparent */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+    transform: scale(0.95); /* Scale down for effect */
 }
 
-/* Анимация появления */
+/* Fade in animation */
 .fade-in {
-    opacity: 1;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    /* Плавная анимация появления и исчезновения */
-    transform: scale(1);
-    /* Возвращаем карточку в исходное состояние */
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+    transform: scale(1); /* Return to original size */
 }
 
 .kupon-image {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    width: 100%; /* Full width */
+    border-radius: 12px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below image */
 }
 
 .more-details {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #FFA500;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    display: inline-block; /* Inline block for button */
+    margin-top: 10px; /* Space above button */
+    padding: 10px 20px; /* Button padding */
+    background-color: #FFA500; /* Orange background */
+    color: #fff; /* White text */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .more-details:hover {
-    background-color: #e69500;
+    background-color: #e69500; /* Darker orange on hover */
+}
+
+/* Mobile Adaptation */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem; /* Smaller title for mobile */
+        padding: 8px 16px; /* Adjusted padding */
+    }
+
+    .icons-container {
+        gap: 20px; /* Reduced gap between icons */
+    }
+
+    .icon {
+        width: 80px; /* Smaller icon size */
+        height: 80px; /* Smaller icon size */
+        font-size: 1rem; /* Smaller text */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .kupon-card {
+        width: 90%; /* Full width on mobile */
+        margin: 10px; /* Smaller margin */
+    }
+}
+
+/* Further adaptation for small devices */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.25rem; /* Smaller title */
+        padding: 6px 12px; /* Further adjusted padding */
+    }
+
+    .icon {
+        width: 70px; /* Smaller icon size */
+        height: 70px; /* Smaller icon size */
+        font-size: 0.9rem; /* Smaller text */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .more-details {
+        padding: 8px 16px; /* Smaller button padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
 }
