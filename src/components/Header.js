@@ -19,11 +19,14 @@ const Header = () => {
     const fetchWeather = async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=Vladivostok&appid=d0934dee549d4dbd42cb3fe8ed6c7d16&units=metric`
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/vladivostok?unitGroup=metric&key=F5YYH7ZXKABDPPB4GJE9RRN4M&contentType=json`
         );
         if (!response.ok) throw new Error("Weather fetch error");
         const data = await response.json();
-        setWeather(data);
+        setWeather({
+          main: { temp: data.currentConditions.temp },
+          name: data.address,
+        });
       } catch (error) {
         console.error(error);
       }

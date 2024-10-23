@@ -1,6 +1,6 @@
 /* Контейнер для хедера */
 .header-container {
-  background: linear-gradient(180deg, #ffffff 93%, #FFA500 100%); /* Основной фон с градиентом */
+  background: linear-gradient(180deg, #ffffff 93%, #ffffff 100%); /* Основной фон с градиентом */
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
