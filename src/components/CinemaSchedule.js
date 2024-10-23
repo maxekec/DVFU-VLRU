@@ -184,7 +184,7 @@ const CinemaSchedule = () => {
             {isModalOpen && selectedMovie && (
                 <MovieModal movie={selectedMovie} onClose={closeModal} />
             )}
-            <a href="/all-recreation-centers" className="view-all-link" data-aos="fade-up">
+            <a href="/VLRU" className="view-all-link" data-aos="fade-up">
                 Все события
             </a>
         </div>
