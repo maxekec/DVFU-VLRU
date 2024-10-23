@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import './VLRU.css';
 import YandexMap from './YandexMap';
+import image1 from '../components/assets/buhta1.jpg'
+import image2 from '../components/assets/buhta2.jpg'
 
 const resortsData = [
   {
@@ -8,7 +10,7 @@ const resortsData = [
     name: 'База отдыха "Сосновый бор"',
     description: 'Уютная база с прекрасными условиями для отдыха на природе.',
     rating: 4,
-    image: 'https://via.placeholder.com/300',
+    image: image1,
     coordinates: [55.751244, 37.618423],
     reviews: [
       { comment: 'Отличное место для семейного отдыха!', author: 'Анна' },
@@ -20,13 +22,14 @@ const resortsData = [
     name: 'База отдыха "Лесная сказка"',
     description: 'Отдых на природе с комфортом и отличным обслуживанием.',
     rating: 5,
-    image: 'https://via.placeholder.com/300',
+    image: image2,
     coordinates: [56.751244, 38.618423],
     reviews: [
       { comment: 'Лучшее место для уединения!', author: 'Светлана' },
       { comment: 'Очень приятно провести время!', author: 'Алексей' },
     ],
   },
+  
   // Add more resorts here...
 ];
 
@@ -41,7 +44,6 @@ const Vlru = () => {
 
   return (
     <div className="app">
-      <h1>Базы отдыха</h1>
       <div className="resort-filter">
         <h2>Фильтры</h2>
         <label>

@@ -494,3 +494,27 @@ color: #6bb3ff;
 color: #202020;
 
 }
+
+[data-theme='dark']  .resort-card {
+
+background-color: #202020;
+
+}
+
+[data-theme='dark'] p {
+
+  background-color: transparent; /* или подходящий цвет, если требуется */
+  color: var(--text-color); /* для текстового цвета */
+
+}
+
+[data-theme='dark'] small {
+
+  background-color: transparent; /* или подходящий цвет, если требуется */
+  color: var(--text-color); /* для текстового цвета */
+
+}
+
+
+
+
