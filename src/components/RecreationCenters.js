@@ -1,8 +1,8 @@
-// src/components/RecreationCenters.js
+
 import React, { useEffect } from 'react';
-import 'aos/dist/aos.css'; // Import AOS styles
-import AOS from 'aos'; // Import AOS library
-import './RecreationCenters.css'; // Import CSS for the component
+import 'aos/dist/aos.css'; 
+import AOS from 'aos'; 
+import './RecreationCenters.css'; 
 import image1 from './assets/buhta1.jpg';
 import image2 from './assets/buhta2.jpg';
 import image3 from './assets/buhta3.jpg';
@@ -13,7 +13,7 @@ const RecreationCenters = () => {
         AOS.init({ duration: 1000 });
     }, []);
 
-    // Example recreation center data
+ 
     const centers = [
         {
             name: 'Кибер база',
@@ -68,7 +68,7 @@ const RecreationCenters = () => {
                 ))}
             </div>
             
-            {/* Link to view all recreation centers */}
+          
             <a href="/VLRU" className="view-all-link" data-aos="fade-up">
                 Смотреть все базы отдыха
             </a>

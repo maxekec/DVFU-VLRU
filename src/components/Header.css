@@ -29,7 +29,7 @@
 
 .nav-menu ul {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   list-style: none;
 }
 .nav-menu a {
@@ -197,9 +197,9 @@ transition: transform 0.3s;
   overflow: hidden; 
 }
 .dropdown-menu.visible {
-  opacity: 1; /* Делаем меню видимым */
-  visibility: visible; /* Делаем меню доступным */
-  transform: translateY(0); /* Вернуть в исходное положение */
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0); 
 }
 .dropdown-news {
   width: 200px; 
@@ -489,4 +489,63 @@ background-color: #202020;
 
 background-color: #202020;
 transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column; 
+    align-items: flex-start;
+    padding: 10px 20px; 
+  }
+  .nav-menu ul {
+    flex-direction: column; 
+    width: 100%; 
+    gap: 10px; 
+  }
+  .logo {
+    height: 40px; 
+    margin-bottom: 10px; 
+  }
+  .right-section {
+    width: 100%; 
+    justify-content: space-between; 
+  }
+  .search-overlay {
+    right: 10px; 
+  }
+  .search-form {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+  .search-form input,
+  .search-form button {
+    width: 100%;
+    margin-top: 5px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 10px 15px; 
+  }
+  .nav-menu a {
+    font-size: 0.9rem; 
+  }
+  .info-box {
+    padding: 5px 10px; 
+  }
+  .search-form button {
+    padding: 10px; 
+  }
+  .search-overlay {
+    right: 5px; 
+  }
+}
+.search-overlay.active {
+  width: 20%;
+}
+.search-form {
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
 }

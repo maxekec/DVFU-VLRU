@@ -1,4 +1,4 @@
-/* Основные стили */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,30 +23,30 @@ html, body {
   padding: 0;
 }
 ::-webkit-scrollbar {
-  width: 8px; /* Увеличиваем ширину скроллбара для улучшения видимости */
-  height: 8px; /* Увеличиваем высоту скроллбара */
+  width: 8px; 
+  height: 8px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 165, 0, 0.1); /* Легкий фон трека для контраста */
-  border-radius: 10px; /* Закругление углов трека */
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Легкая тень для трека */
+  background: rgba(255, 165, 0, 0.1); 
+  border-radius: 10px; 
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ff8c00, #fa642e); /* Градиент для основной полосы */
-  border-radius: 10px; /* Закругление углов скроллбара */
-  transition: background 0.3s, transform 0.3s; /* Плавный переход цвета и эффекта при наведении */
+  background: linear-gradient(180deg, #ff8c00, #fa642e); 
+  border-radius: 10px; 
+
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ff7f50, #ff6347); /* Градиент при наведении */
-  transform: scale(1.1); /* Увеличение при наведении для эффекта */
+  background: linear-gradient(180deg, #ff7f50, #ff6347); 
+  transform: scale(1.1); 
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(180deg, #ff4500, rgb(255, 102, 0)); /* Цвет при нажатии */
-  transform: scale(0.9); /* Уменьшение при нажатии для эффекта */
+  background: linear-gradient(180deg, #ff4500, rgb(255, 102, 0)); 
+  transform: scale(0.9); 
 }
 
 .App {
@@ -74,7 +74,7 @@ header .container {
 }
 
 header .logo {
-  font-size: 2rem; /* Вместо общего .logo */
+  font-size: 2rem; 
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -94,17 +94,17 @@ nav a {
 
 
 
-/* Навигационная панель */
+
 .nav-panel {
   position: fixed;
-  top: 100px; /* Отступ от верхней части страницы */
-  left: 20px; /* Отступ от левого края */
-  width: 200px; /* Ширина панели навигации */
-  background-color: #fff; /* Цвет фона */
-  border-radius: 8px; /* Скругление углов */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
-  z-index: 10; /* Уровень над другими элементами */
-  padding: 20px 0; /* Добавлено немного внутреннего отступа */
+  top: 100px; 
+  left: 20px; 
+  width: 200px; 
+  background-color: #fff; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10; 
+  padding: 20px 0; 
 }
 
 .nav-extra {
@@ -133,32 +133,32 @@ nav a {
 
 .nav-list {
   list-style: none;
-  padding: 20px 0; /* Отступ внутри панели */
+  padding: 20px 0; 
 }
 
 .nav-list li {
-  margin: 10px 0; /* Отступ между элементами списка */
+  margin: 10px 0; 
 }
 
 .nav-list a {
 
-  color: #333; /* Цвет текста */
+  color: #333; 
   display: flex;
-  align-items: center; /* Выравнивание по центру */
-  padding: 10px 15px; /* Отступ вокруг текста */
-  border-radius: 4px; /* Скругление углов */
-  transition: background-color 0.3s; /* Плавный переход цвета фона */
+  align-items: center; 
+  padding: 10px 15px; 
+  border-radius: 4px; 
+  transition: background-color 0.3s; 
 }
 
 .nav-list a:hover {
-  background-color: #87c1ff; /* Цвет фона при наведении */
+  background-color: #87c1ff; 
 }
 
 .nav-list a i {
-  margin-right: 10px; /* Отступ между иконкой и текстом */
+  margin-right: 10px; 
 }
 
-/* Фикс футера */
+
 footer {
   position: fixed;
   bottom: 0;
@@ -170,7 +170,7 @@ footer {
   font-size: 14px;
 }
 
-/* Основная часть */
+
 main {
   flex-grow: 1;
   padding: 40px 0;
@@ -185,10 +185,10 @@ main {
   align-items: center;
   padding: 20px;
   background: #6fa3ef;
-  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5); /* Тень */
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5); 
 }
 
-/* Стили для новостей */
+
 .news h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -196,19 +196,19 @@ main {
 }
 
 .news-list {
-  display: flex; /* Используем flexbox для горизонтального расположения */
-  flex-wrap: wrap; /* Позволяет переносить карточки на следующую строку при недостатке места */
-  gap: 20px; /* Отступы между карточками */
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .news-card {
-  flex: 1 1 calc(10% - 20px); /* Карточки занимают по 1/10 ширины, с отступом */
-  background-color: #ffffff; /* Цвет фона карточки */
-  border: 1px solid #ddd; /* Граница карточки */
-  border-radius: 5px; /* Закругление углов */
-  padding: 15px; /* Отступы внутри карточки */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
-  transition: box-shadow 0.3s; /* Плавный переход для тени */
+  flex: 1 1 calc(10% - 20px); 
+  background-color: #ffffff; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+  padding: 15px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: box-shadow 0.3s; 
   transform: translateY(-5px);
 }
 
@@ -219,11 +219,11 @@ main {
 }
 
 .news-card h3 {
-  margin: 0 0 10px; /* Отступы заголовка */
+  margin: 0 0 10px;
 }
 
 .news-card p {
-  margin: 0; /* Убираем отступы для параграфа */
+  margin: 0; 
 }
 
 .news-card a {
@@ -233,14 +233,14 @@ main {
 }
 
 .news-card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .news-card:hover {
   transform: translateY(-5px);
 }
 
-/* Основные стили футера */
+
 footer {
   background-color: #333;
   color: white;
@@ -330,15 +330,15 @@ footer p {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  margin-right: 20px; /* Отступ между карточками */
-  flex: 1; /* Занимает равное пространство */
-  max-width: 45%; /* Максимальная ширина для каждой карточки */
+  margin-right: 20px; 
+  flex: 1; 
+  max-width: 45%; 
 }
 
 .main-news img,
 .cinema-card img {
   width: 100%;
-  height: auto; /* Подстраиваем высоту под изображение */
+  height: auto; 
   object-fit: cover;
 }
 
@@ -372,7 +372,7 @@ footer p {
   background-color: #ddd;
 }
 
-/* Стили для баз отдыха */
+
 .base-catalog {
   padding: 40px 0;
   
@@ -385,40 +385,40 @@ footer p {
 }
 
 .base-list {
-  display: flex; /* Используем flexbox для горизонтального расположения */
-  flex-wrap: wrap; /* Позволяет переносить карточки на следующую строку при недостатке места */
-  gap: 20px; /* Отступы между карточками */
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .base-card {
-  flex: 1 1 calc(33.33% - 20px); /* Карточки занимают по 1/3 ширины, с отступом */
-  background-color: #ffffff; /* Цвет фона карточки */
-  border: 1px solid #ddd; /* Граница карточки */
-  border-radius: 5px; /* Закругление углов */
-  padding: 15px; /* Отступы внутри карточки */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
-  transition: box-shadow 0.3s; /* Плавный переход для тени */
+  flex: 1 1 calc(33.33% - 20px); 
+  background-color: #ffffff; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+  padding: 15px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: box-shadow 0.3s; 
   transform: translateY(-5px);
 }
 
 .base-card h3 {
-  margin: 0 0 10px; /* Отступы заголовка */
+  margin: 0 0 10px; 
 }
 
 .base-card p {
-  margin: 0; /* Убираем отступы для параграфа */
+  margin: 0; 
 }
 
 .base-card a {
 
   color: #007bff;
   font-weight: 500;
-  display: inline-block; /* Сделаем ссылку блочным элементом */
-  margin-top: 10px; /* Отступ сверху */
+  display: inline-block; 
+  margin-top: 10px; 
 }
 
 .base-card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .base-card:hover {

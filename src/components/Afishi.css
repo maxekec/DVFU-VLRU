@@ -43,16 +43,16 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Сдвиньте контент вверх */
-    height: 950px; /* Увеличьте высоту карточки, если это необходимо */
+    justify-content: flex-start; 
+    height: 950px; 
     position: relative;
     padding: 15px;
     transition: transform 0.3s;
 }
 .event-card img {
     width: 100%;
-    height: 650px; /* Увеличьте высоту изображения */
-    object-fit: cover; /* Изображение будет полностью вмещаться в карточку */
+    height: 650px; 
+    object-fit: cover; 
 }
 .event-card h2 {
     font-size: 1.5rem;
@@ -96,11 +96,11 @@
     border-radius: 10px;
     text-align: center;
     width: 600px;
-    position: fixed; /* Используйте fixed для позиционирования */
-    top: 120px; /* Задайте расстояние от верхней части экрана */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Корректировка для центрирования */
-    z-index: 1000; /* Убедитесь, что модальное окно находится выше других элементов */
+    position: fixed; 
+    top: 120px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000; 
 }
 .modal img {
     width: 100%;

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ChatWidget.css'; // Подключаем стили для компонента
+import './ChatWidget.css'; 
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false); // Для контроля видимости виджета
-  const [isClosing, setIsClosing] = useState(false); // Для контроля анимации закрытия
+  const [isVisible, setIsVisible] = useState(false); 
+  const [isClosing, setIsClosing] = useState(false); 
 
   const toggleChat = () => {
     if (isOpen) {
@@ -12,8 +12,8 @@ const ChatWidget = () => {
       setIsClosing(true);
       setTimeout(() => {
         setIsOpen(false);
-        setIsClosing(false); // Сбрасываем состояние после завершения анимации
-      }, 300); // 300 мс — время анимации затухания
+        setIsClosing(false); 
+      }, 300); 
     } else {
       setIsOpen(true);
     }
@@ -24,8 +24,6 @@ const ChatWidget = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-      // Появление виджета, когда прокручено 50% страницы
       const shouldBeVisible = scrollPosition > windowHeight / 2;
       setIsVisible(shouldBeVisible);
     };

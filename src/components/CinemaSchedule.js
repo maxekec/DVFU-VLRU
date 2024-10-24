@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Scrollbar, A11y } from 'swiper/modules';
-import MovieModal from './MovieModal'; // Import the MovieModal component
+import MovieModal from './MovieModal'; 
 
 const CinemaSchedule = () => {
     useEffect(() => {
@@ -45,7 +45,7 @@ const CinemaSchedule = () => {
             description: 'В этой шокирующей и ироничной интерпретации супергеройского жанра группа обычных людей решает противостоять злым супергероям. Наполненный черным юмором и жестокими сценами, сериал бросает вызов традиционным представлениям о героизме и справедливости.',
             director: 'Эрик Крипке',
             cast: ['Карл Урбан', 'Джаквин Хенсон', 'Энтони Старр'],
-            duration: 60, // минут (каждая серия)
+            duration: 60, 
             category: 'action'
         },
         {
@@ -65,7 +65,7 @@ const CinemaSchedule = () => {
             description: 'Это захватывающая история о превращении учителя химии в наркобарона. Когда жизнь Уолтера Уайта меняется из-за страшного диагноза, он решает использовать свои знания, чтобы обеспечить семью, что приводит к множеству этических дилемм и драматическим последствиям.',
             director: 'Винс Гиллиган',
             cast: ['Брайан Кранстон', 'Аарон Пол', 'Анна Ганн'],
-            duration: 47, // минут (каждая серия)
+            duration: 47, 
             category: 'drama'
         },
         {
@@ -180,7 +180,7 @@ const CinemaSchedule = () => {
                 )}
             </Swiper>
 
-            {/* Movie Modal */}
+           
             {isModalOpen && selectedMovie && (
                 <MovieModal movie={selectedMovie} onClose={closeModal} />
             )}

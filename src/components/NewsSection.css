@@ -1,24 +1,23 @@
 .news-section {
   display: flex;
-  gap: 20px; /* Промежутки между блоками */
+  gap: 20px; 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Это создает эффект параллакса */
+  background-attachment: fixed; 
   padding: 20px;
   transition: background-color 0.5s ease, color 0.5s ease;
   will-change: transform;
-  position: relative; /* Нужно для псевдоэлемента */
+  position: relative; 
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Нижняя тень */
-  0 -4px 12px rgba(0, 0, 0, 0.2); /* Верхняя тень */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 
+  0 -4px 12px rgba(0, 0, 0, 0.2); 
 }
 
 
 
-
 .main-news:hover {
-  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+  transform: translateY(-5px); 
 
 }
 
@@ -29,10 +28,10 @@
   left: 3%;
   border-radius: 25px;
   flex-direction: column;
-  justify-content: flex-end; /* Текст располагается у нижней границы */
-  align-items: flex-start; /* Текст выравнивается по левому краю */
+  justify-content: flex-end; 
+  align-items: flex-start; 
   color: white;
-  text-align: left; /* Текст выравнивается влево */
+  text-align: left; 
   z-index: 3;
 }
 
@@ -51,7 +50,7 @@
 }
 
 .main-news-image:hover {
-  transform: scale(1.05); /* Увеличиваем изображение при наведении */
+  transform: scale(1.05); 
 }
 
 .main-news-image-container::after {
@@ -60,9 +59,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%; /* Высота градиента, можно настроить */
-  background: linear-gradient(to top, rgba(0, 0, 0, 50), rgba(0, 0, 0, 0)); /* Градиент снизу вверх */
-  border-radius: 10px; /* Совпадает с радиусом изображения */
+  height: 50%; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 50), rgba(0, 0, 0, 0)); 
+  border-radius: 10px; 
 }
 
 .main-news-content {
@@ -80,7 +79,7 @@
   font-size: 1em;
 }
 
-/* Маленькие новости под главной новостью */
+
 .small-news-blocks {
   display: flex;
   flex-direction: column;
@@ -94,13 +93,13 @@
   padding: 10px;
   margin-top: 5%;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .small-news-item:hover {
-  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+  transform: translateY(-5px); 
 }
 
 .small-news-title {
@@ -114,9 +113,9 @@
   font-size: 0.9em;
 }
 
-/* Центральный блок с текстом */
+
 .center-image-block {
-  flex: 2; /* Занимает 2/3 пространства */
+  flex: 2; 
   border-radius: 10px;
   padding: 20px;
   height: 580px;
@@ -136,13 +135,13 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Параллакс-эффект */
-  filter: blur(10px); /* Применяет размытие */
-  z-index: 0; /* Помещает размытую картинку под текстом */
+  background-attachment: fixed; 
+  filter: blur(10px); 
+  z-index: 0; 
 }
 
 .center-image-block:hover {
-  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+  transform: translateY(-5px); 
 
 }
 
@@ -151,7 +150,7 @@
   text-align: center;
 }
 
-/* Вертикальный блок актуальных новостей (справа) */
+
 .recent-news {
   flex: 1;
   border-radius: 10px;
@@ -168,7 +167,7 @@
 
 }
 
-/* Общий стиль для контейнеров без воды и вакансий */
+
 .no-water-container,
 .vacancies-container {
   display: flex;
@@ -176,8 +175,8 @@
   background: #f9f9f9;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
-  width: 100%; /* Занимаем полную ширину */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  width: 100%; 
   gap: 15px;
   margin-top: 25px;
   transition: background-color 0.5s ease, color 0.5s ease;
@@ -185,23 +184,23 @@
 
 .vacancies-container h3,
 .no-water-container h3 {
-  text-align: center; /* Выравниваем заголовок по центру */
+  text-align: center; 
   margin-bottom: 10px;
 }
 
-/* Актуальные новости */
+
 .recent-news-item {
   background: #ffffff;
   border: 1px solid #e2e2e2;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 .recent-news-item:hover {
-  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
+  transform: translateY(-5px); 
 }
 
 /* Без воды */
@@ -211,15 +210,15 @@
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   flex: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .no-water-item:hover {
-  transform: translateY(-5px); /* Легкий сдвиг вверх при наведении */
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Увеличиваем тень */
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); 
 }
 .recent-news-title,
 .no-water-title {
@@ -234,17 +233,17 @@
 
 /* Стили слайдера */
 .slick-slide {
-  display: flex !important; /* Позволяем элементам занимать всю высоту */
-  justify-content: center; /* Центрируем содержимое */
-  align-items: center; /* Центрируем содержимое */
-  height: auto; /* Установите высоту по вашему усмотрению */
+  display: flex !important; 
+  justify-content: center; 
+  align-items: center; 
+  height: auto; 
 }
 
 h3 {
   text-align: center;
 }
 
-/* Центрируем блок с изображением */
+
 .central-image-container {
   position: relative;
   width: 100%;
@@ -256,38 +255,38 @@ h3 {
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
   transition: transform 0.3s ease;
 }
 
 .central-image-content-overlay {
   position: absolute;
-  bottom: 12px; /* Размещаем текст у нижней границы */
+  bottom: 12px; 
   border-radius: 10px;
   left: 0;
-  width: 100%; /* Ширина 100% */
+  width: 100%; 
   padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 50), rgba(0, 0, 0, 0)); /* Градиент снизу вверх */
-  color: white; /* Цвет текста */
+  background: linear-gradient(to top, rgba(0, 0, 0, 50), rgba(0, 0, 0, 0)); 
+  color: white; 
 }
 
 .central-image-title {
-  font-size: 1.5em; /* Размер заголовка */
+  font-size: 1.5em; 
   margin: 10px 0;
 }
 
 .central-image-description {
-  font-size: 1em; /* Размер описания */
+  font-size: 1em; 
 }
 
 .central-image-container.fade {
-  opacity: 0; /* Скрываем контейнер при анимации */
+  opacity: 0; 
 }
 
 .slick-slider {
   display: flex;
-  align-items: center; /* Центрируем элементы по вертикали */
-  justify-content: center; /* Центрируем элементы по горизонтали */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  align-items: center; 
+  justify-content: center; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
 

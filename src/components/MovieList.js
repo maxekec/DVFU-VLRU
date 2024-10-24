@@ -1,4 +1,3 @@
-// MovieList.js
 import React, { useState } from 'react';
 import { movies } from './movies';
 import MovieCard from './MovieCard';

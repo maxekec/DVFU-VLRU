@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick'; // Импортируем Slider
+import Slider from 'react-slick'; 
 import './NewsSection.css';
-import news1 from './assets/news1.jpg'; // Импорт изображений
+import news1 from './assets/news1.jpg'; 
 import news2 from './assets/news2.jpg';
 import news3 from './assets/news3.jpeg';
 import news4 from './assets/news4.jpg';
@@ -96,10 +96,10 @@ const NewsSection = () => {
         },
     ];
 
-    // Уникальные идентификаторы для первого слайдера актуальных новостей
+   
     const recentNewsItems = [
         {
-            id: 101, // Новые идентификаторы для первого слайдера
+            id: 101, 
             title: 'Обновление сайта',
             content: 'Сайт обновился до новой версии!',
             image: news1,
@@ -130,22 +130,22 @@ const NewsSection = () => {
         },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0); // Текущий индекс слайда
-    const [fade, setFade] = useState(false); // Состояние для анимации
+    const [currentIndex, setCurrentIndex] = useState(0); 
+    const [fade, setFade] = useState(false); 
 
     // Функция для смены новости
     const changeNews = () => {
-        setFade(true); // Начинаем анимацию
+        setFade(true); 
         setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % recentNewsItems.length); // Переключаем на следующий индекс
-            setFade(false); // Завершаем анимацию
-        }, 750); // Задержка для анимации
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % recentNewsItems.length); 
+            setFade(false); 
+        }, 750); 
     };
 
-    // Используем эффект для автоматической смены новости каждые 7 секунд
+    
     useEffect(() => {
-        const interval = setInterval(changeNews, 7000); // 7000 мс = 7 секунд
-        return () => clearInterval(interval); // Очищаем интервал при размонтировании
+        const interval = setInterval(changeNews, 7000); 
+        return () => clearInterval(interval); 
     }, []);
 
     // Настройки слайдера
@@ -153,14 +153,14 @@ const NewsSection = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1, // Показываем 1 слайд
+        slidesToShow: 1, 
         slidesToScroll: 1,
-        vertical: true, // Включаем вертикальный режим
+        vertical: true, 
         verticalSwiping: true,
         adaptiveHeight: true,
         arrows: false,
-        autoplay: true, // Автопрокрутка
-        autoplaySpeed: 7000, // Задержка между слайдами
+        autoplay: true, 
+        autoplaySpeed: 7000, 
         responsive: [
             {
                 breakpoint: 1024,
@@ -183,7 +183,6 @@ const NewsSection = () => {
         ],
     };
 
-    // Данные для слайдера домов без горячей и холодной воды
     const noWaterHouses = [
         {
             id: 1,

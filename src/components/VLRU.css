@@ -1,80 +1,139 @@
-h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .resort-filter {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .resort-filter h2 {
-    margin-right: 20px;
-    color: #444;
-  }
-  
-  .resort-filter label {
-    font-size: 16px;
-  }
-  
-  .resort-filter input {
-    margin-left: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .resort-list {
-    display: flex;
-    flex-direction: column; /* Display cards vertically */
-    width: 50%;
-    flex-wrap: wrap;
-  }
-  
-  .resort-card {
-    display: flex; /* Horizontal layout for card content */
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-    transition: transform 0.2s;
-  }
-  
-  .resort-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .resort-card img {
-    width: 300px; /* Reduced image size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px;
-    margin-right: 20px; /* Space between image and text */
-  }
-  
-  .resort-card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Vertical layout for card content */
-  }
-  
-  .ratings {
-    margin: 10px 0;
-  }
-  
-  .star {
-    color: gold;
-  }
-  
-  .reviews {
-    margin-top: 10px;
-  }
-  
-  .review {
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    margin-top: 10px;
-    color: #555;
-  }
-  
+.app {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('../components/assets/Group\ 2\ \(1\).png');
+  padding: 20px;
+}
+.resort-filter {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.resort-filter h2 {
+  margin-right: 20px;
+  color: #444;
+  font-size: 1.5em;
+}
+.resort-filter input {
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+.resort-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+.resort-card {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resort-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.resort-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+.resort-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+.resort-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price-tag {
+  background-color: #ffeb3b;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+.house-types p {
+  font-size: 1em;
+  color: #444;
+  margin: 5px 0;
+}
+.ratings {
+  margin: 10px 0;
+}
+.star {
+  font-size: 1.5em;
+  color: gold;
+}
+.details-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+.details-button:hover {
+  background-color: #f57c00;
+}
+.modal {
+  background-color: #fff;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-image {
+  width: 500px;
+  height: 400px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.close-button:hover {
+  color: #f44336;
+}
+.close-icon::before {
+  content: '✖'; 
+}

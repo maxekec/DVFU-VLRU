@@ -75,21 +75,21 @@ const LoviKupon = () => {
 
     const [selectedKupon, setSelectedKupon] = useState(null);
     const [fadeClass, setFadeClass] = useState('fade-in');
-    const [hoveredIndex, setHoveredIndex] = useState(null); // Состояние для отслеживания наведения
+    const [hoveredIndex, setHoveredIndex] = useState(null); 
 
     const handleIconClick = (index) => {
         if (selectedKupon === index) {
             setFadeClass('fade-out');
             setTimeout(() => {
                 setSelectedKupon(null);
-                setFadeClass('fade-in'); // Сбрасываем класс для плавного появления
-            }, 500); // Задержка для исчезновения
+                setFadeClass('fade-in'); 
+            }, 500); 
         } else {
             setFadeClass('fade-out');
             setTimeout(() => {
                 setSelectedKupon(index);
                 setFadeClass('fade-in');
-            }, 500); // Задержка для исчезновения
+            }, 500); 
         }
     };
 
