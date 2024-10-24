@@ -1,0 +1,119 @@
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .map-box {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Стиль для фильтра */
+  .resort-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .resort-filter h2 {
+    margin-right: 20px;
+    font-size: 1.8em;
+    color: #333;
+  }
+  
+  .resort-filter input {
+    padding: 10px 18px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resort-filter input:focus {
+    outline: none;
+    border-color: #ff6700;
+    box-shadow: 0 0 10px rgba(255, 103, 0, 0.5);
+  }
+  
+  .resort-filter input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Стиль для карточек */
+  .resort-list {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .resort-card {
+    display: flex;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .resort-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .resort-card img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin-right: 20px;
+  }
+  
+  .resort-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .ratings {
+    margin: 10px 0;
+  }
+  
+  .star {
+    color: gold;
+    font-size: 1.4em;
+  }
+  
+  .reviews {
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+  
+  .review {
+    color: #555;
+    font-size: 0.95em;
+  }
+  
+  .review small {
+    color: #777;
+  }

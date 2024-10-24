@@ -1,20 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
 import logo from './assets/VLRU png.png';
-import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon, faDollarSign, faEuroSign, faYenSign, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate(); // Инициализируем useNavigate
+  const navigate = useNavigate(); 
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [weather, setWeather] = useState(null);
   const [currencyRates, setCurrencyRates] = useState({ usd: null, eur: null, cny: null });
   const [currentTime, setCurrentTime] = useState(new Date());
   const [theme, setTheme] = useState('light');
-  const [isScrolled, setIsScrolled] = useState(false); // Новый стейт для отслеживания скролла
+  const [isScrolled, setIsScrolled] = useState(false); 
 
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
@@ -128,8 +128,8 @@ const Header = () => {
             src={logo} 
             alt="Logo" 
             className="logo" 
-            onClick={() => navigate('/')} // Добавляем функцию навигации
-            style={{ cursor: 'pointer' }} // Курсор меняется на указатель
+            onClick={() => navigate('/')} 
+            style={{ cursor: 'pointer' }} 
           />
           <nav className="nav-menu" ref={menuRef}>
             <ul>

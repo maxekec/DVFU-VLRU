@@ -3,7 +3,7 @@
     color: #fff;
     padding: 20px 30px;
     font-family: 'Arial', sans-serif;
-    box-shadow: 0 50px 120px rgba(0, 0, 0, 1.5); /* Легкая тень */
+    box-shadow: 0 50px 120px rgba(0, 0, 0, 1.5); 
     border-top: 1px solid #ccc;
     width: 100%;
     text-align: left;
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 30px; /* Чуть больше отступ */
+    margin-bottom: 30px; 
   }
   
   .footer-column {
@@ -75,14 +75,14 @@
   }
   
   .social-icons li a img {
-    width: 35px; /* Чуть больше иконки */
+    width: 35px; 
     height: 35px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .social-icons li a:hover img {
-    transform: scale(1.15); /* Более плавное увеличение */
-    box-shadow: 0 0 15px #000000cc; /* Сильнее свечение */
+    transform: scale(1.15); 
+    box-shadow: 0 0 15px #000000cc; 
   }
   
   .footer-bottom {
@@ -90,7 +90,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
-    padding-top: 20px; /* Увеличили отступ */
+    padding-top: 20px; 
     border-top: 1px solid #FFA500;
   }
   
@@ -120,7 +120,7 @@
     text-decoration: underline;
   }
   
-  /* Фиксация футера */
+
   footer {
     position: relative;
     margin-top: auto;
@@ -128,19 +128,63 @@
   }
   
   .social-icons li a i {
-    font-size: 35px; /* Размер иконок */
-    color: #000000; /* Цвет иконок */
+    font-size: 35px; 
+    color: #000000; 
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
   .social-icons li a:hover i {
     transform: scale(1.15);
-    color: #FFA500; /* Цвет при наведении */
+    color: #FFA500;
   }
   
 
 .footer-info h4 {
 
 color: #000000;
+
+}
+
+
+@media (max-width: 768px) {
+  .footer-column {
+    width: 48%; 
+    margin-bottom: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 15px; 
+  }
+  .footer-column {
+    width: 100%; 
+    margin-bottom: 15px; 
+  }
+
+  .footer-column h4 {
+
+font-size: 16px;
+
+}
+
+.footer-bottom {
+
+  flex-direction: column; 
+  align-items: flex-start; 
+  font-size: 14px; 
+
+}
+
+.footer-info {
+  margin-bottom: 10px;
+
+}
+
+.footer-copyright {
+
+text-align: left;
+
+}
 
 }

@@ -50,13 +50,13 @@ const AnimatedNumber = ({ value }) => {
 
 const Questionnaire = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Инициализация AOS
+    AOS.init({ duration: 1000 }); 
   }, []);
 
   return (
     <div className="questionnaire-container">
       {questions.map(({ id, title, description, stats, buttonText }) => (
-        <div className="card" key={id} data-aos="zoom-in" data-aos-duration="750"> {/* Добавлено AOS атрибут */}
+        <div className="card" key={id} data-aos="zoom-in" data-aos-duration="750"> 
           <div className="background-image" />
           <div className="card-content">
             <h2 className="card-title">{title}</h2>

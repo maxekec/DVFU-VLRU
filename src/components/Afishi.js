@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Afishi.css'; // Импортируем CSS для стилей
+import './Afishi.css'; 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Импортируем стили Swiper
-import { FaStar } from 'react-icons/fa'; // Импортируем звезды из библиотеки react-icons
+import 'swiper/swiper-bundle.css'; 
+import { FaStar } from 'react-icons/fa'; 
 import poster1 from './assets/kino1.jpg';
 import poster2 from './assets/kino2.jpg';
 import poster3 from './assets/kino3.jpg';
@@ -178,7 +178,7 @@ const newEvents = [
         image: poster3,
         rating: 4.6,
     },
-    // Добавьте другие события по необходимости
+  
 ];
 const Afishi = () => {
     useEffect(() => {

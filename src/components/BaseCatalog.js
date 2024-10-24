@@ -60,7 +60,6 @@ const BaseCatalog = () => {
                 ))}
               </ul>
               <h4>Карта:</h4>
-              {/* Подключим 2GIS API */}
               <div id="map"></div>
             </div>
           </div>
